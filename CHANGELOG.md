@@ -32,6 +32,10 @@ Le format suit les principes de [Keep a Changelog](https://keepachangelog.com/fr
   `.rmeta`, invisible au repos, restait dans le flux et ne réservait de
   l'espace qu'en dessous du titre. Elle est sortie du flux (position
   absolue) et le padding de `.rcontent` équilibré en conséquence.
+- Titres de projets décalés horizontalement de façon incohérente (effet
+  « escalier » via `nth-child`) : chaque titre était aligné à gauche avec
+  un décalage différent au lieu d'être centré dans sa propre ligne. Les
+  titres et légendes sont maintenant centrés horizontalement.
 
 ## [1.0.0] — 2026-07-09
 
