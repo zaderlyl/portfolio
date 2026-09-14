@@ -238,7 +238,7 @@ h1 {
 .rows-work .rcontent {
   position: relative;
   z-index: 1;
-  padding: 0.55em var(--pad) 0.55em 20px;
+  padding: calc(0.55em + 26px) var(--pad) calc(0.55em + 26px) 20px;
 }
 
 .rows-work .rtitle {
@@ -253,8 +253,10 @@ h1 {
 .rows-work a:hover .rtitle { color: var(--bg); }
 
 .rows-work .rmeta {
+  position: absolute;
+  left: 20px;
+  bottom: 0.55em;
   display: block;
-  margin-top: 6px;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
