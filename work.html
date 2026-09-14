@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work — Lilian Cornet</title>
+  <meta name="description" content="Sélection de projets de design de produits et d'interfaces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lilian Cornet</a>
+    <nav>
+      <a href="index.html">Index</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="work-center">
+    <p class="kicker">01 — Work</p>
+    <h1>Travaux sélectionnés</h1>
+
+    <div class="filters" role="group" aria-label="Filtrer par catégorie">
+      <button type="button" class="active" data-filter="all">Tous</button>
+      <button type="button" data-filter="site-vitrine">Site vitrine</button>
+      <button type="button" data-filter="site-fonctionnel">Site fonctionnel</button>
+      <button type="button" data-filter="identite-graphique">Identité graphique</button>
+      <button type="button" data-filter="autre-projet">Autre projet</button>
+    </div>
+
+    <ul class="rows-work">
+      <li data-cat="site-vitrine">
+        <a href="halles-beziers.html">
+          <span class="ridx"><span>01</span></span>
+          <span class="rcontent">
+            <span class="rtitle">Halles de Béziers</span>
+            <span class="rmeta">Site vitrine · Visite 360° · 2026</span>
+          </span>
+        </a>
+      </li>
+      <li data-cat="site-fonctionnel">
+        <a href="musee-fabi.html">
+          <span class="ridx"><span>02</span></span>
+          <span class="rcontent">
+            <span class="rtitle">Musée FABI</span>
+            <span class="rmeta">Site fonctionnel · PHP · MySQL · 2026</span>
+          </span>
+        </a>
+      </li>
+      <li data-cat="autre-projet">
+        <a href="gram.html">
+          <span class="ridx"><span>03</span></span>
+          <span class="rcontent">
+            <span class="rtitle">GRAM</span>
+            <span class="rmeta">Autre projet · Jeu vidéo · Phaser 3 · 2026</span>
+          </span>
+        </a>
+      </li>
+      <li data-cat="site-fonctionnel">
+        <a href="promocards.html">
+          <span class="ridx"><span>04</span></span>
+          <span class="rcontent">
+            <span class="rtitle">PromoCards</span>
+            <span class="rmeta">Site fonctionnel · PHP · SQLite · 2026</span>
+          </span>
+        </a>
+      </li>
+      <li data-cat="identite-graphique">
+        <a href="printemps-culture.html">
+          <span class="ridx"><span>05</span></span>
+          <span class="rcontent">
+            <span class="rtitle">Printemps de la Culture</span>
+            <span class="rmeta">Identité graphique · Affiche · Brochure · 2026</span>
+          </span>
+        </a>
+      </li>
+      <li data-cat="identite-graphique">
+        <a href="dominos.html">
+          <span class="ridx"><span>06</span></span>
+          <span class="rcontent">
+            <span class="rtitle">Domino's</span>
+            <span class="rmeta">Identité graphique · Brand book · 2026</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <script>
+    // Filtrage des projets par catégorie.
+    const buttons = document.querySelectorAll('.filters button');
+    const items = document.querySelectorAll('.rows-work li');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(li => {
+          li.classList.toggle('filtered-out', f !== 'all' && li.dataset.cat !== f);
+        });
+      });
+    });
+  </script>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Work — 02 / 04</span>
+  </footer>
+
+</body>
+</html>

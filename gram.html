@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRAM — Les 7 Royaumes — Lilian Cornet</title>
+  <meta name="description" content="Étude de cas : GRAM — Les 7 Royaumes, jeu de plateforme 2D en Phaser 3, SAÉ 2.02 du BUT MMI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lilian Cornet</a>
+    <nav>
+      <a href="index.html">Index</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="kicker">Étude de cas — 03</p>
+    <h1>GRAM — Les 7 Royaumes</h1>
+
+    <div class="case-layout">
+      <div class="case-text">
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Contexte</dt>
+            <dd>SAÉ 2.02 — BUT MMI, 1re année</dd>
+          </div>
+          <div>
+            <dt>Année</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>Rôle</dt>
+            <dd>Game design & développement</dd>
+          </div>
+          <div>
+            <dt>Livrables</dt>
+            <dd>Jeu de plateforme jouable</dd>
+          </div>
+        </dl>
+
+        <div class="prose">
+          <p>
+            GRAM — Les 7 Royaumes est un jeu de plateforme 2D fait avec
+            Phaser 3, inspiré de la mythologie nordique. On y incarne
+            Siegfried, guerrier à la nature double, chargé de traverser les
+            sept royaumes pour reconstituer les fragments de Gram, l'épée
+            brisée par Loki, et rétablir l'équilibre entre les mondes.
+          </p>
+          <p>
+            Le joueur est accompagné de deux compagnons, Thor et Loki, qui
+            le suivent en formation grâce à un système d'enregistrement de
+            position à retardement — chaque personnage rejoue les
+            déplacements du précédent avec un léger délai, sans script de
+            trajectoire préétabli.
+          </p>
+          <p>
+            Chaque royaume existe en deux versions, recto et verso, entre
+            lesquelles on bascule via des portails : une mécanique de
+            monde-miroir qui redessine la carte, les ennemis et les
+            obstacles. S'y ajoutent un système de combat avec projectiles
+            et temps de recharge, des ennemis et un boss avec leur propre
+            IA, des objets à collecter, des clefs et des cryptes à ouvrir,
+            ainsi qu'un écran-titre, un synopsis, un mode histoire et des
+            crédits.
+          </p>
+          <p>
+            Ce projet m'a fait travailler la logique de jeu pure : machine
+            à états entre les scènes (menu, histoire, carte recto/verso,
+            victoire, défaite), physique arcade (gravité, sauts,
+            collisions), IA d'ennemis et de boss, et un fichier de
+            configuration externe qui permet d'ajuster la difficulté sans
+            toucher au code.
+          </p>
+        </div>
+
+        <div class="pager">
+          <a href="musee-fabi.html">← Projet précédent</a>
+          <a href="promocards.html">Projet suivant →</a>
+        </div>
+
+      </div>
+
+      <aside class="shots" aria-label="Captures d'écran du jeu">
+        <figure class="shot" data-speed="0.03">
+          <img src="images/gram-menu.jpg" alt="Écran-titre de GRAM — Les 7 Royaumes, avec les boutons Start, Contrôles et Crédits">
+          <figcaption>Écran-titre</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.09">
+          <img src="images/gram-asgard.jpg" alt="Entrée dans le royaume d'Asgard, avec le titre du niveau affiché à l'écran">
+          <figcaption>Asgard — royaume des dieux</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.15">
+          <img src="images/gram-gameplay.jpg" alt="Le joueur explore une ruine de pierre blanche au-dessus des nuages">
+          <figcaption>Exploration en plateforme</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Étude de cas — 03</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lb-top">
+      <span class="lb-counter" id="lb-counter">01 / 03</span>
+      <button type="button" id="lb-close">[ Fermer ]</button>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-frame">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <p class="lb-caption" id="lb-caption"></p>
+    </div>
+    <div class="lb-bottom">
+      <button type="button" id="lb-prev">← Précédente</button>
+      <button type="button" id="lb-next">Suivante →</button>
+    </div>
+  </div>
+
+  <script src="case.js"></script>
+
+</body>
+</html>

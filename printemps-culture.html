@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Printemps de la Culture — Lilian Cornet</title>
+  <meta name="description" content="Étude de cas : affiche et brochure du Printemps de la Culture de Brignoles, photomontage et mise en page, R2.08 du BUT MMI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lilian Cornet</a>
+    <nav>
+      <a href="index.html">Index</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="kicker">Étude de cas — 05</p>
+    <h1>Printemps de la Culture</h1>
+
+    <div class="case-layout">
+      <div class="case-text">
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Contexte</dt>
+            <dd>R2.08 — BUT MMI, 1re année</dd>
+          </div>
+          <div>
+            <dt>Année</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>Rôle</dt>
+            <dd>Direction artistique & mise en page</dd>
+          </div>
+          <div>
+            <dt>Livrables</dt>
+            <dd>Affiche A3 + brochure 20 pages</dd>
+          </div>
+        </dl>
+
+        <div class="prose">
+          <p>
+            Commande fictive pour la 8ᵉ édition du Printemps de la Culture
+            de Brignoles, sur le thème « Du rêve à l'imaginaire » : une
+            affiche A3 et une brochure de 20 pages au format carré 15×15 cm
+            présentant l'ensemble de la programmation (théâtre, concerts,
+            conférences, danse, cinéma, ateliers).
+          </p>
+          <p>
+            La contrainte de départ était le photomontage. J'ai construit
+            l'identité visuelle autour du Flatiron Building de New York,
+            désaturé et dupliqué en symétrie, que je fais fleurir de crocus
+            violets et oranges — le végétal qui perce la pierre, comme le
+            printemps qui traverse la ville. Des aplats de couleur en
+            surimpression (orange, violet, bleu, vert, jaune moutarde)
+            viennent fragmenter l'image, en écho aux affiches new-yorkaises
+            vintage et aux compositions de Mondrian et Van Doesburg qui ont
+            nourri mes recherches.
+          </p>
+          <p>
+            Cette grammaire visuelle — photo en noir et blanc, aplat de
+            couleur qui mord sur l'image, typographie condensée — se répète
+            ensuite sur toutes les pages de la brochure : chaque spectacle
+            a sa double page dédiée, traitée avec ses propres visuels mais
+            la même construction, pour que l'ensemble reste reconnaissable
+            du début à la fin malgré la diversité des 15 événements
+            présentés.
+          </p>
+          <p>
+            Techniquement, les visuels ont été retouchés sous Photoshop et
+            Illustrator (CMJN, 300 dpi, aucun PNG ni GIF autorisé par le
+            cahier des charges) puis assemblés sous InDesign avec les
+            logos institutionnels obligatoires, pour un export final en
+            PDF/X-4 prêt pour l'impression professionnelle.
+          </p>
+        </div>
+
+        <div class="pager">
+          <a href="promocards.html">← Projet précédent</a>
+          <a href="dominos.html">Projet suivant →</a>
+        </div>
+
+      </div>
+
+      <aside class="shots" aria-label="Visuels de l'affiche et de la brochure">
+        <figure class="shot" data-speed="0.03">
+          <img src="images/printemps-poster.jpg" alt="Affiche A3 du Printemps de la Culture, photomontage du Flatiron Building et de crocus violets">
+          <figcaption>Affiche A3</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.09">
+          <img src="images/printemps-cover.jpg" alt="Couverture de la brochure, même photomontage décliné au format carré">
+          <figcaption>Couverture brochure</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.15">
+          <img src="images/printemps-evenement.jpg" alt="Page événement La Belle Hélène avec portrait dupliqué en surimpression colorée">
+          <figcaption>Page événement — La Belle Hélène</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.22">
+          <img src="images/printemps-dracula.jpg" alt="Double page Théâtre-Comédie, La Véritable Histoire de Dracula">
+          <figcaption>Double page — Théâtre-Comédie</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.29">
+          <img src="images/printemps-partenaires.jpg" alt="Dernière page listant les partenaires et logos institutionnels">
+          <figcaption>Page partenaires</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Étude de cas — 05</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lb-top">
+      <span class="lb-counter" id="lb-counter">01 / 05</span>
+      <button type="button" id="lb-close">[ Fermer ]</button>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-frame">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <p class="lb-caption" id="lb-caption"></p>
+    </div>
+    <div class="lb-bottom">
+      <button type="button" id="lb-prev">← Précédente</button>
+      <button type="button" id="lb-next">Suivante →</button>
+    </div>
+  </div>
+
+  <script src="case.js"></script>
+
+</body>
+</html>

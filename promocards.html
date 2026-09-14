@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PromoCards — Lilian Cornet</title>
+  <meta name="description" content="Étude de cas : PromoCards, système de comptes PHP/SQLite avec sites personnels générés dynamiquement, R2.13 du BUT MMI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lilian Cornet</a>
+    <nav>
+      <a href="index.html">Index</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="kicker">Étude de cas — 04</p>
+    <h1>PromoCards</h1>
+
+    <div class="case-layout">
+      <div class="case-text">
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Contexte</dt>
+            <dd>R2.13 — BUT MMI, 1re année</dd>
+          </div>
+          <div>
+            <dt>Année</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>Rôle</dt>
+            <dd>Développement back-end</dd>
+          </div>
+          <div>
+            <dt>Livrables</dt>
+            <dd>Système de comptes + éditeur</dd>
+          </div>
+        </dl>
+
+        <div class="prose">
+          <p>
+            PromoCards est un système de gestion de comptes en PHP et
+            SQLite : chaque visiteur peut s'inscrire, se connecter, et se
+            voit générer automatiquement sa propre page personnelle,
+            éditable directement depuis le site.
+          </p>
+          <p>
+            Les mots de passe sont hachés avec <code>password_hash()</code>
+            et vérifiés avec <code>password_verify()</code>, les sessions
+            PHP gèrent l'authentification, et chaque compte peut être
+            supprimé avec ses fichiers associés. Un « hub » liste
+            dynamiquement tous les sites créés en scannant le dossier du
+            projet.
+          </p>
+          <p>
+            La partie la plus délicate a été l'éditeur de site intégré :
+            chaque utilisateur colle son propre code HTML, affiché en
+            aperçu direct sur sa page. Ce code passe par des filtres de
+            sécurité qui neutralisent les liens vers les pages sensibles du
+            site (suppression de compte, connexion, etc.) et bloquent les
+            scripts dangereux (accès au cookie, requêtes réseau,
+            redirections, stockage local) avant l'affichage — pour éviter
+            qu'un utilisateur ne puisse piéger un autre visiteur.
+          </p>
+          <p>
+            Ce projet m'a fait travailler la sécurité web concrètement :
+            gestion des sessions, hachage des mots de passe, et surtout
+            l'assainissement de contenu généré par l'utilisateur avant de
+            l'afficher — un problème qu'on ne mesure vraiment qu'en
+            l'implémentant soi-même.
+          </p>
+        </div>
+
+        <div class="pager">
+          <a href="gram.html">← Projet précédent</a>
+          <a href="printemps-culture.html">Projet suivant →</a>
+        </div>
+
+      </div>
+
+      <aside class="shots" aria-label="Captures d'écran du site">
+        <figure class="shot" data-speed="0.03">
+          <img src="images/tp7-inscription.jpg" alt="Formulaire de création de compte, style éditorial noir et crème">
+          <figcaption>Inscription</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.09">
+          <img src="images/tp7-dashboard.jpg" alt="Dashboard utilisateur connecté avec accès à l'éditeur, au hub et à la suppression de compte">
+          <figcaption>Dashboard utilisateur</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.15">
+          <img src="images/tp7-editor.jpg" alt="Console éditeur de code HTML avec aperçu du rendu et barre de navigation persistante">
+          <figcaption>Éditeur de site perso</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.22">
+          <img src="images/tp7-hub.jpg" alt="Hub listant tous les sites personnels créés par les utilisateurs">
+          <figcaption>Hub des créateurs</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Étude de cas — 04</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lb-top">
+      <span class="lb-counter" id="lb-counter">01 / 04</span>
+      <button type="button" id="lb-close">[ Fermer ]</button>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-frame">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <p class="lb-caption" id="lb-caption"></p>
+    </div>
+    <div class="lb-bottom">
+      <button type="button" id="lb-prev">← Précédente</button>
+      <button type="button" id="lb-next">Suivante →</button>
+    </div>
+  </div>
+
+  <script src="case.js"></script>
+
+</body>
+</html>
