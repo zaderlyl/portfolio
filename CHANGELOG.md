@@ -28,6 +28,10 @@ Le format suit les principes de [Keep a Changelog](https://keepachangelog.com/fr
 - Marge de bord-à-bord de `.rows-work` recalculée à partir de `var(--pad)`
   plutôt que de `100vw`, qui inclut parfois la largeur de la scrollbar et
   provoquait un débordement horizontal selon les navigateurs.
+- Titres de projets mal centrés verticalement dans `work.html` : la légende
+  `.rmeta`, invisible au repos, restait dans le flux et ne réservait de
+  l'espace qu'en dessous du titre. Elle est sortie du flux (position
+  absolue) et le padding de `.rcontent` équilibré en conséquence.
 
 ## [1.0.0] — 2026-07-09
 
