@@ -239,6 +239,7 @@ h1 {
   position: relative;
   z-index: 1;
   padding: calc(0.55em + 26px) var(--pad) calc(0.55em + 26px) 20px;
+  text-align: center;
 }
 
 .rows-work .rtitle {
@@ -255,7 +256,9 @@ h1 {
 .rows-work .rmeta {
   position: absolute;
   left: 20px;
+  right: var(--pad);
   bottom: 0.55em;
+  text-align: center;
   display: block;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -269,10 +272,6 @@ h1 {
   opacity: 1;
   color: rgba(236, 231, 225, 0.6);
 }
-
-/* Titres en escalier pour casser l'alignement */
-.rows-work li:nth-child(2n) .rtitle { padding-left: 1.2em; }
-.rows-work li:nth-child(3n) .rtitle { padding-left: 2.4em; }
 
 .rows-work li.filtered-out { display: none; }
 
