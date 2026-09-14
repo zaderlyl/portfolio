@@ -10,12 +10,24 @@ Le format suit les principes de [Keep a Changelog](https://keepachangelog.com/fr
 - `README.md` décrivant le projet, sa structure et son fonctionnement local.
 - `CHANGELOG.md` (ce fichier).
 - Suivi du projet sous git.
+- Animation au survol des liens du header : les crochets `[ ]` glissent et
+  apparaissent au survol, plutôt que d'être réservés à la page active.
 
 ### Changed
 - Réorganisation de l'arborescence : `style.css`, `case.js`, les images et le CV
   déplacés dans `assets/` (`css/`, `js/`, `images/`), et les 6 pages d'études de
   cas déplacées dans `work/`. Tous les liens relatifs ont été mis à jour en
   conséquence.
+
+### Fixed
+- Débordement horizontal de quelques pixels sur `work.html` : la liste de
+  projets (`.rows-work`) héritait de `align-items: center` (posé sur
+  `.work-center` pour centrer le titre et les filtres) et se redimensionnait
+  à son contenu au lieu de remplir toute la largeur ; ajout de
+  `align-self: stretch` pour la corriger.
+- Marge de bord-à-bord de `.rows-work` recalculée à partir de `var(--pad)`
+  plutôt que de `100vw`, qui inclut parfois la largeur de la scrollbar et
+  provoquait un débordement horizontal selon les navigateurs.
 
 ## [1.0.0] — 2026-07-09
 
