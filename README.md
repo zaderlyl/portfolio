@@ -25,7 +25,8 @@ Site portfolio statique présentant mes projets de développement web et de desi
     ├── fonts/              Un dossier par font, avec sa licence
     │   ├── cape/           Cape (texte)
     │   └── yellow-banana/  Yellow Banana (titres)
-    ├── images/             Visuels, un dossier par projet (même nom que la page d'étude de cas)
+    ├── icons/              Favicon et icône tactile (« LC »)
+    ├── images/             og-image.png (aperçu de partage) et visuels, un dossier par projet (même nom que la page d'étude de cas)
     │   ├── halles-beziers/
     │   ├── musee-fabi/
     │   ├── gram/
