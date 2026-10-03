@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PromoCards — Lilian Cornet</title>
-  <meta name="description" content="Étude de cas : PromoCards, système de comptes PHP/SQLite avec sites personnels générés dynamiquement, R2.13 du BUT MMI.">
+  <meta name="description" content="Case study: PromoCards, a PHP/SQLite account system with dynamically generated personal sites, R2.13 of the BUT MMI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <p class="kicker">Étude de cas — 04</p>
+    <p class="kicker">Case study — 04</p>
     <h1>PromoCards</h1>
 
     <div class="case-layout">
@@ -31,80 +31,76 @@
 
         <dl class="meta-grid">
           <div>
-            <dt>Contexte</dt>
-            <dd>R2.13 — BUT MMI, 1re année</dd>
+            <dt>Context</dt>
+            <dd>R2.13 — BUT MMI, 1st year</dd>
           </div>
           <div>
-            <dt>Année</dt>
+            <dt>Year</dt>
             <dd>2026</dd>
           </div>
           <div>
-            <dt>Rôle</dt>
-            <dd>Développement back-end</dd>
+            <dt>Role</dt>
+            <dd>Back-end development</dd>
           </div>
           <div>
-            <dt>Livrables</dt>
-            <dd>Système de comptes + éditeur</dd>
+            <dt>Deliverables</dt>
+            <dd>Account system + editor</dd>
           </div>
         </dl>
 
         <div class="prose">
           <p>
-            PromoCards est un système de gestion de comptes en PHP et
-            SQLite : chaque visiteur peut s'inscrire, se connecter, et se
-            voit générer automatiquement sa propre page personnelle,
-            éditable directement depuis le site.
+            PromoCards is an account management system built with PHP and
+            SQLite: every visitor can sign up, log in, and automatically gets
+            their own personal page, editable directly from the site.
           </p>
           <p>
-            Les mots de passe sont hachés avec <code>password_hash()</code>
-            et vérifiés avec <code>password_verify()</code>, les sessions
-            PHP gèrent l'authentification, et chaque compte peut être
-            supprimé avec ses fichiers associés. Un « hub » liste
-            dynamiquement tous les sites créés en scannant le dossier du
-            projet.
+            Passwords are hashed with <code>password_hash()</code> and checked
+            with <code>password_verify()</code>, PHP sessions handle
+            authentication, and each account can be deleted along with its
+            associated files. A “hub” dynamically lists all the sites created
+            by scanning the project folder.
           </p>
           <p>
-            La partie la plus délicate a été l'éditeur de site intégré :
-            chaque utilisateur colle son propre code HTML, affiché en
-            aperçu direct sur sa page. Ce code passe par des filtres de
-            sécurité qui neutralisent les liens vers les pages sensibles du
-            site (suppression de compte, connexion, etc.) et bloquent les
-            scripts dangereux (accès au cookie, requêtes réseau,
-            redirections, stockage local) avant l'affichage — pour éviter
-            qu'un utilisateur ne puisse piéger un autre visiteur.
+            The trickiest part was the built-in site editor: each user pastes
+            their own HTML code, which is shown as a live preview on their
+            page. That code goes through security filters that neutralise
+            links to the site's sensitive pages (account deletion, login,
+            etc.) and block dangerous scripts (cookie access, network
+            requests, redirects, local storage) before display — to stop a
+            user from trapping another visitor.
           </p>
           <p>
-            Ce projet m'a fait travailler la sécurité web concrètement :
-            gestion des sessions, hachage des mots de passe, et surtout
-            l'assainissement de contenu généré par l'utilisateur avant de
-            l'afficher — un problème qu'on ne mesure vraiment qu'en
-            l'implémentant soi-même.
+            This project made me work on web security in practice: session
+            management, password hashing, and above all sanitising
+            user-generated content before displaying it — a problem you only
+            truly grasp by implementing it yourself.
           </p>
         </div>
 
         <div class="pager">
-          <a href="gram.html">← Projet précédent</a>
-          <a href="printemps-culture.html">Projet suivant →</a>
+          <a href="gram.html">← Previous project</a>
+          <a href="printemps-culture.html">Next project →</a>
         </div>
 
       </div>
 
-      <aside class="shots" aria-label="Captures d'écran du site">
+      <aside class="shots" aria-label="Website screenshots">
         <figure class="shot" data-speed="0.03">
-          <img src="../assets/images/tp7-inscription.jpg" alt="Formulaire de création de compte, style éditorial noir et crème">
-          <figcaption>Inscription</figcaption>
+          <img src="../assets/images/tp7-inscription.jpg" alt="Account creation form, black and cream editorial style">
+          <figcaption>Sign-up</figcaption>
         </figure>
         <figure class="shot" data-speed="0.09">
-          <img src="../assets/images/tp7-dashboard.jpg" alt="Dashboard utilisateur connecté avec accès à l'éditeur, au hub et à la suppression de compte">
-          <figcaption>Dashboard utilisateur</figcaption>
+          <img src="../assets/images/tp7-dashboard.jpg" alt="Logged-in user dashboard with access to the editor, the hub and account deletion">
+          <figcaption>User dashboard</figcaption>
         </figure>
         <figure class="shot" data-speed="0.15">
-          <img src="../assets/images/tp7-editor.jpg" alt="Console éditeur de code HTML avec aperçu du rendu et barre de navigation persistante">
-          <figcaption>Éditeur de site perso</figcaption>
+          <img src="../assets/images/tp7-editor.jpg" alt="HTML code editor console with a live preview and a persistent navigation bar">
+          <figcaption>Personal site editor</figcaption>
         </figure>
         <figure class="shot" data-speed="0.22">
-          <img src="../assets/images/tp7-hub.jpg" alt="Hub listant tous les sites personnels créés par les utilisateurs">
-          <figcaption>Hub des créateurs</figcaption>
+          <img src="../assets/images/tp7-hub.jpg" alt="Hub listing all the personal sites created by users">
+          <figcaption>Creators hub</figcaption>
         </figure>
       </aside>
     </div>
@@ -112,13 +108,13 @@
 
   <footer>
     <span>© 2026 Lilian Cornet</span>
-    <span>Étude de cas — 04</span>
+    <span>Case study — 04</span>
   </footer>
 
   <div class="lightbox" id="lightbox" hidden>
     <div class="lb-top">
       <span class="lb-counter" id="lb-counter">01 / 04</span>
-      <button type="button" id="lb-close">[ Fermer ]</button>
+      <button type="button" id="lb-close">[ Close ]</button>
     </div>
     <div class="lb-stage">
       <div class="lb-frame">
@@ -127,8 +123,8 @@
       <p class="lb-caption" id="lb-caption"></p>
     </div>
     <div class="lb-bottom">
-      <button type="button" id="lb-prev">← Précédente</button>
-      <button type="button" id="lb-next">Suivante →</button>
+      <button type="button" id="lb-prev">← Previous</button>
+      <button type="button" id="lb-next">Next →</button>
     </div>
   </div>
 

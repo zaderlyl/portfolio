@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Musée FABI — Lilian Cornet</title>
-  <meta name="description" content="Étude de cas : site dynamique du Musée FABI avec catalogue en base de données, espace client et visite 3D, SAÉ 2.03 du BUT MMI.">
+  <meta name="description" content="Case study: dynamic website for the Musée FABI with a database-driven catalogue, customer area and 3D tour, SAÉ 2.03 of the BUT MMI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <p class="kicker">Étude de cas — 02</p>
+    <p class="kicker">Case study — 02</p>
     <h1>Musée FABI</h1>
 
     <div class="case-layout">
@@ -31,87 +31,86 @@
 
         <dl class="meta-grid">
           <div>
-            <dt>Contexte</dt>
-            <dd>SAÉ 2.03 — BUT MMI, 1re année</dd>
+            <dt>Context</dt>
+            <dd>SAÉ 2.03 — BUT MMI, 1st year</dd>
           </div>
           <div>
-            <dt>Année</dt>
+            <dt>Year</dt>
             <dd>2026</dd>
           </div>
           <div>
-            <dt>Rôle</dt>
-            <dd>Développement full-stack</dd>
+            <dt>Role</dt>
+            <dd>Full-stack development</dd>
           </div>
           <div>
-            <dt>Livrables</dt>
-            <dd>Site dynamique + API PHP + BDD</dd>
+            <dt>Deliverables</dt>
+            <dd>Dynamic site + PHP API + database</dd>
           </div>
         </dl>
 
         <div class="prose">
           <p>
-            Site complet d'un musée d'art fictif, le Musée FABI, construit
-            autour de deux chantiers principaux : une <strong>visite
-            virtuelle en 3D</strong> et une <strong>base de données</strong>
-            qui alimente tout le site.
+            A complete website for a fictional art museum, the Musée FABI,
+            built around two main workstreams: a <strong>3D virtual
+            tour</strong> and a <strong>database</strong> that powers the
+            whole site.
           </p>
           <p>
-            La visite 3D, développée avec Three.js, reconstitue le musée
-            salle par salle : navigation libre au clavier (ZQSD/WASD),
-            sprint, et un système de collisions maison qui teste la
-            position du joueur contre les zones de navigation de chaque
-            salle et couloir. Une mini-carte affichée en temps réel
-            situe le visiteur dans le bâtiment, et des étiquettes
-            d'œuvres apparaissent par proximité — nom, auteur, courant
-            artistique — quand on s'approche d'une sculpture ou d'un
-            tableau. Les salles et leurs œuvres se chargent à la volée
-            selon la distance du joueur, pour garder l'expérience fluide.
+            The 3D tour, built with Three.js, recreates the museum room by
+            room: free keyboard navigation (ZQSD/WASD), sprinting, and a
+            custom collision system that tests the player's position against
+            the navigation zones of each room and corridor. A real-time
+            minimap shows the visitor's position in the building, and artwork
+            labels appear by proximity — title, artist, art movement — when
+            you approach a sculpture or painting. Rooms and their artworks are
+            loaded on the fly depending on the player's distance, to keep the
+            experience smooth.
           </p>
           <p>
-            Derrière l'interface, une base de données MySQL structure tout
-            le contenu : œuvres, catégories, salles, utilisateurs, notes et
-            commentaires. J'ai conçu le schéma, écrit les requêtes via PDO
-            avec des requêtes préparées, et exposé les données au front par
-            une API PHP (catalogue, favoris, notes, session utilisateur).
-            Le catalogue affiché sur le site et les œuvres accrochées dans
-            la visite 3D viennent de cette même source de données.
+            Behind the interface, a MySQL database structures all the content:
+            artworks, categories, rooms, users, ratings and comments. I
+            designed the schema, wrote the queries with PDO using prepared
+            statements, and exposed the data to the front end through a PHP
+            API (catalogue, favourites, ratings, user session). The catalogue
+            shown on the site and the artworks hung in the 3D tour come from
+            this same data source.
           </p>
           <p>
-            Autour de ce socle, le site propose aussi un espace client
-            complet (inscription, connexion, sessions PHP, favoris), la
-            réservation de billets par email via PHPMailer, une page de
-            don, une newsletter et une interface multilingue.
+            Around this foundation, the site also offers a full customer area
+            (sign-up, login, PHP sessions, favourites), ticket booking by
+            email via PHPMailer, a donation page, a newsletter and a
+            multilingual interface.
           </p>
           <p>
-            C'est mon premier projet full-stack complet : concevoir une
-            base de données, sécuriser une API, gérer l'authentification
-            et la 3D temps réel — tout en soignant une direction artistique
-            sombre et picturale, à l'image d'un musée.
+            This is my first complete full-stack project: designing a
+            database, securing an API, handling authentication and real-time
+            3D — while crafting a dark, painterly art direction worthy of a
+            museum.
           </p>
         </div>
 
         <div class="pager">
-          <a href="halles-beziers.html">← Projet précédent</a>
-          <a href="gram.html">Projet suivant →</a>
+          <a href="halles-beziers.html">← Previous project</a>
+          <a href="gram.html">Next project →</a>
         </div>
 
       </div>
 
-      <aside class="shots" aria-label="Captures d'écran du site">
+      <aside class="shots" aria-label="Website screenshots">
         <figure class="shot" data-speed="0.03">
-          <img src="../assets/images/musee-accueil.jpg" alt="Page d'accueil du Musée FABI, décor de peinture classique avec arche et nuages">
-          <figcaption>Accueil</figcaption>
+          <img src="../assets/images/musee-accueil.jpg" alt="Home page of the Musée FABI, classical painting backdrop with an arch and clouds">
+          <figcaption>Home</figcaption>
         </figure>
         <figure class="shot" data-speed="0.09">
-          <img src="../assets/images/musee-catalogue.jpg" alt="Page catalogue des œuvres du Musée FABI">
-          <figcaption>Catalogue des œuvres</figcaption>
+          <img src="../assets/images/musee-catalogue.jpg" alt="Artwork catalogue page of the Musée FABI">
+          <figcaption>Artwork catalogue</figcaption>
         </figure>
         <figure class="shot" data-speed="0.15">
-          <img src="../assets/images/musee-don.jpg" alt="Page de don « Soutenez l'art vivant » avec statistiques">
-          <figcaption>Page de don</figcaption>
+          <img src="../assets/images/musee-don.jpg" alt="Donation page “Support living art” with statistics">
+          <figcaption>Donation page</figcaption>
         </figure>
         <figure class="shot" data-speed="0.22">
-          <img src="../assets/images/musee-contact.jpg" alt="Page contact ornée de peintures d'anges">
+          <img src="../assets/images/musee-contact.jpg" alt="Contact page decorated with paintings of angels">
           <figcaption>Contact</figcaption>
         </figure>
       </aside>
@@ -120,13 +119,13 @@
 
   <footer>
     <span>© 2026 Lilian Cornet</span>
-    <span>Étude de cas — 02</span>
+    <span>Case study — 02</span>
   </footer>
 
   <div class="lightbox" id="lightbox" hidden>
     <div class="lb-top">
       <span class="lb-counter" id="lb-counter">01 / 04</span>
-      <button type="button" id="lb-close">[ Fermer ]</button>
+      <button type="button" id="lb-close">[ Close ]</button>
     </div>
     <div class="lb-stage">
       <div class="lb-frame">
@@ -135,8 +134,8 @@
       <p class="lb-caption" id="lb-caption"></p>
     </div>
     <div class="lb-bottom">
-      <button type="button" id="lb-prev">← Précédente</button>
-      <button type="button" id="lb-next">Suivante →</button>
+      <button type="button" id="lb-prev">← Previous</button>
+      <button type="button" id="lb-next">Next →</button>
     </div>
   </div>
 
