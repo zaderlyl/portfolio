@@ -801,66 +801,46 @@ h1 {
 
 .car-frame {
   position: relative;
-  aspect-ratio: 20 / 9;
+  aspect-ratio: 5 / 2;
   overflow: hidden;
-  touch-action: pan-y;
-  user-select: none;
+  /* Fondu sur les bords : les images entrent et sortent en douceur */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
 
-/* Chaque slide fait 60 % du cadre, centrée ; les voisines dépassent sur les côtés. */
+.car-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+/* La piste contient les slides en double : -50 % = une boucle exacte. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 .slide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 20%;
-  width: 60%;
+  flex: none;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  margin-right: 12px;
   border: 1px solid var(--ink);
   background: var(--ink);
   overflow: hidden;
-  opacity: 0;
-  transform: translateX(210%) scale(0.85);
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease;
 }
 
-.slide[data-pos="0"] { opacity: 1; transform: none; z-index: 2; }
-.slide[data-pos="-1"] { opacity: 0.45; transform: translateX(-105%) scale(0.88); cursor: pointer; }
-.slide[data-pos="1"] { opacity: 0.45; transform: translateX(105%) scale(0.88); cursor: pointer; }
-.slide[data-pos="far-left"] { transform: translateX(-210%) scale(0.85); }
-.slide[data-pos="far-right"] { transform: translateX(210%) scale(0.85); }
-
 .slide img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none;
 }
 
-.car-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-top: 10px;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
+@media (prefers-reduced-motion: reduce) {
+  .car-track { animation: none; }
 }
-
-.car-nav { display: inline-flex; align-items: baseline; gap: 12px; }
-
-.car-nav button {
-  font: inherit;
-  background: none;
-  border: 0;
-  color: var(--ink);
-  cursor: pointer;
-  padding: 0 2px;
-  transition: transform 0.2s ease;
-}
-
-#car-prev:hover { transform: translateX(-3px); }
-#car-next:hover { transform: translateX(3px); }
 
 @media (max-width: 860px) {
   .carousel {
