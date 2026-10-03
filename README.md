@@ -19,7 +19,8 @@ Site portfolio statique présentant mes projets de développement web et de desi
 │   ├── gram.html
 │   ├── promocards.html
 │   ├── printemps-culture.html
-│   └── dominos.html
+│   ├── dominos.html
+│   └── contribution-board.html
 └── assets/
     ├── css/style.css       Feuille de style commune à toutes les pages
     ├── js/case.js          Parallax + visionneuse (lightbox) des études de cas
@@ -33,7 +34,8 @@ Site portfolio statique présentant mes projets de développement web et de desi
     │   ├── gram/
     │   ├── promocards/
     │   ├── printemps-culture/
-    │   └── dominos/
+    │   ├── dominos/
+    │   └── contribution-board/
     └── cv-lilian-cornet.pdf  CV téléchargeable
 ```
 
@@ -47,6 +49,7 @@ Site portfolio statique présentant mes projets de développement web et de desi
 | [PromoCards](work/promocards.html) | Site fonctionnel | PHP, SQLite |
 | [Printemps de la Culture](work/printemps-culture.html) | Identité graphique | Affiche, brochure |
 | [Domino's](work/dominos.html) | Identité graphique | Brand book |
+| [Contribution Board](work/contribution-board.html) | Outil (GitHub Action) | Node.js, SVG animé |
 
 ## Développement local
 

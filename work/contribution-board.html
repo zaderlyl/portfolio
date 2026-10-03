@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contribution Board — Lilian Cornet</title>
+  <meta name="description" content="Case study: Contribution Board, a zero-dependency GitHub Action that turns the contribution graph into animated SVG scenes.">
+  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon-32.png">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#ece7e1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lilian Cornet">
+  <meta property="og:title" content="Contribution Board — Lilian Cornet">
+  <meta property="og:description" content="Case study: Contribution Board, a zero-dependency GitHub Action that turns the contribution graph into animated SVG scenes.">
+  <meta property="og:url" content="https://zaderlyl.github.io/portfolio-v2/work/contribution-board.html">
+  <meta property="og:image" content="https://zaderlyl.github.io/portfolio-v2/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="../index.html">Lilian Cornet</a>
+    <nav>
+      <a href="../index.html">Index</a>
+      <a href="../work.html" aria-current="page">Production</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="kicker">Case study — 07</p>
+    <h1>Contribution Board</h1>
+
+    <div class="case-layout">
+      <div class="case-text">
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Context</dt>
+            <dd>Personal open-source project</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd>Design &amp; development</dd>
+          </div>
+          <div>
+            <dt>Deliverables</dt>
+            <dd>GitHub Action + 8 animated styles</dd>
+          </div>
+          <div>
+            <dt>Source</dt>
+            <dd><a href="https://github.com/zaderlyl/contribution-board" target="_blank" rel="noopener">GitHub ↗</a></dd>
+          </div>
+        </dl>
+
+        <div class="prose">
+          <p>
+            Contribution Board turns the GitHub contribution graph into a
+            small animated scene that replays your real commits: a cannon that
+            aims and fires, a tide that uncovers shells, a sonar that detects
+            activity, a meteor shower, a garden that grows, a laser sweep, a
+            breakout game. Every style reads the same data — the GitHub
+            GraphQL API — and only the staging changes.
+          </p>
+          <p>
+            It is a GitHub Action written in plain Node.js 20 with zero
+            external dependencies: native <code>fetch</code>, no bundling, and
+            self-hosted from the user's own profile repository, so there is no
+            third-party instance that can go down. A workflow runs daily on a
+            cron schedule, regenerates an SVG and commits it, and the profile
+            README simply embeds the image.
+          </p>
+          <p>
+            One shared module fetches the contributions and lays them out on
+            the grid; each style is an independent module that exports its
+            metadata and a render function taking the days and returning an
+            SVG string. Adding a style means adding one file and registering
+            it. The animations are pure CSS keyframes generated from the data,
+            so the SVG animates anywhere GitHub renders it — no GIF needed.
+          </p>
+          <p>
+            The main lesson: a bug in a generated animation can't be caught by
+            reading the code — an element landing in the wrong place only
+            shows when you watch it run. Checking every style in a browser
+            became part of the workflow, and each style lives on its own
+            branch merged by pull request, as in any open-source project (MIT
+            licence).
+          </p>
+        </div>
+
+        <div class="pager">
+          <a href="dominos.html">← Previous project</a>
+          <a href="../work.html">All work →</a>
+        </div>
+
+      </div>
+
+      <aside class="shots shots-wide" aria-label="Animated contribution board styles">
+        <figure class="shot" data-speed="0.03">
+          <img src="../assets/images/contribution-board/cannon.svg" alt="A cannon pivots to aim and fires a coloured square at each commit">
+          <figcaption>Cannon</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.09">
+          <img src="../assets/images/contribution-board/tide.svg" alt="A tide covers the grid then recedes, leaving a shell on each commit">
+          <figcaption>Tide</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.15">
+          <img src="../assets/images/contribution-board/sonar.svg" alt="The busiest days become emitters; other active days are detected by the sweeping ping">
+          <figcaption>Sonar</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.22">
+          <img src="../assets/images/contribution-board/garden.svg" alt="Each active day grows a plant: grass, flower, then tree">
+          <figcaption>Garden</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.29">
+          <img src="../assets/images/contribution-board/breakout.svg" alt="A paddle chases a bouncing ball that breaks every active day it hits">
+          <figcaption>Breakout</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Case study — 07</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lb-top">
+      <span class="lb-counter" id="lb-counter">01 / 05</span>
+      <button type="button" id="lb-close">[ Close ]</button>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-frame">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <p class="lb-caption" id="lb-caption"></p>
+    </div>
+    <div class="lb-bottom">
+      <button type="button" id="lb-prev">← Previous</button>
+      <button type="button" id="lb-next">Next →</button>
+    </div>
+  </div>
+
+  <script src="../assets/js/case.js"></script>
+
+</body>
+</html>

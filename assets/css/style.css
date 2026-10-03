@@ -484,6 +484,11 @@ h1 {
 .shot:nth-child(even) { margin-left: 18%; transform: rotate(2deg); }
 .shot + .shot { margin-top: -14%; }
 
+/* Visuels très larges et peu hauts (SVG animés) : pas de chevauchement. */
+.shots-wide .shot { width: 100%; }
+.shots-wide .shot:nth-child(even) { margin-left: 0; }
+.shots-wide .shot + .shot { margin-top: 28px; }
+
 .shot figcaption {
   display: flex;
   justify-content: space-between;
