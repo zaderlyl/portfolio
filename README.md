@@ -12,6 +12,7 @@ Site portfolio statique présentant mes projets de développement web et de desi
 ├── work.html               Page « Production » : liste des projets (filtres par domaine et type)
 ├── about.html              Parcours & compétences
 ├── contact.html            Coordonnées, CV et carrousel des projets
+├── 404.html                Page d'erreur (servie par l'hébergeur pour toute URL introuvable)
 ├── work/                   Études de cas (une page par projet)
 │   ├── halles-beziers.html
 │   ├── musee-fabi.html

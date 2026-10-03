@@ -766,6 +766,12 @@ h1 {
   margin-top: 40px;
 }
 
+.error-link {
+  margin-top: 40px;
+  font-size: clamp(1.3rem, 4.5vw, 3.2rem);
+  text-transform: uppercase;
+}
+
 .big-link:hover { background: var(--ink); color: var(--bg); }
 
 .socials {

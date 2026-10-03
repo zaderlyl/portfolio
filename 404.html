@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // The host serves this file at whatever URL was missing, so make every
+    // relative path below resolve from the site root (GitHub Pages project
+    // sites live under /<repo>/, custom domains and localhost under /).
+    (function () {
+      var root = location.hostname.endsWith('github.io')
+        ? '/' + location.pathname.split('/')[1] + '/'
+        : '/';
+      document.write('<base href="' + root + '">');
+    })();
+  </script>
+  <title>Page not found — Lilian Cornet</title>
+  <meta name="description" content="This page does not exist.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#ece7e1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lilian Cornet</a>
+    <nav>
+      <a href="index.html">Index</a>
+      <a href="work.html">Production</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="kicker">Error — 404</p>
+    <h1>This page doesn't exist.</h1>
+
+    <p class="note">
+      The link may be broken, or the page may have moved. Head back to the
+      index or browse the productions.
+    </p>
+
+    <a class="big-link error-link" href="index.html">← Back to index</a>
+  </main>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Error — 404</span>
+  </footer>
+
+</body>
+</html>
