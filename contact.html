@@ -21,9 +21,9 @@
 
   <main>
     <p class="kicker">03 — Contact</p>
-    <h1>Got a project in mind? Let's talk.</h1>
+    <h1 class="mail-title"><a class="big-link" href="mailto:lcornet38@gmail.com">lcornet38@gmail.com</a></h1>
 
-    <a class="big-link" href="mailto:lcornet38@gmail.com">lcornet38@gmail.com</a>
+    <p class="contact-title">Got a project in mind? Let's talk.</p>
 
     <div class="socials">
       <a href="https://www.linkedin.com/in/liliancornet" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -36,12 +36,117 @@
       placement in web development (full-stack, front or back end) or
       digital communication. I usually reply within 48 hours.
     </p>
+
+    <div class="carousel" aria-label="Preview of my productions">
+      <div class="car-frame">
+        <a class="slide" href="work/halles-beziers.html" data-title="Halles de Béziers" tabindex="0">
+          <img src="assets/images/sae-accueil.jpg" alt="Halles de Béziers" loading="lazy">
+        </a>
+        <a class="slide" href="work/musee-fabi.html" data-title="Musée FABI" tabindex="-1">
+          <img src="assets/images/musee-accueil.jpg" alt="Musée FABI" loading="lazy">
+        </a>
+        <a class="slide" href="work/gram.html" data-title="GRAM" tabindex="-1">
+          <img src="assets/images/gram-menu.jpg" alt="GRAM" loading="lazy">
+        </a>
+        <a class="slide" href="work/promocards.html" data-title="PromoCards" tabindex="-1">
+          <img src="assets/images/tp7-inscription.jpg" alt="PromoCards" loading="lazy">
+        </a>
+        <a class="slide" href="work/printemps-culture.html" data-title="Printemps de la Culture" tabindex="-1">
+          <img src="assets/images/printemps-poster.jpg" alt="Printemps de la Culture" loading="lazy">
+        </a>
+        <a class="slide" href="work/dominos.html" data-title="Domino's" tabindex="-1">
+          <img src="assets/images/dominos-logo.jpg" alt="Domino's" loading="lazy">
+        </a>
+      </div>
+      <div class="car-meta">
+        <span id="car-title">Halles de Béziers</span>
+        <span class="car-nav">
+          <button type="button" id="car-prev" aria-label="Previous project">←</button>
+          <span id="car-count">01 / 06</span>
+          <button type="button" id="car-next" aria-label="Next project">→</button>
+        </span>
+      </div>
+    </div>
   </main>
 
   <footer>
     <span>© 2026 Lilian Cornet</span>
     <span>Contact — 04 / 04</span>
   </footer>
+
+  <script>
+    // Sliding carousel: the current project sits in the middle, the previous
+    // and next ones peek in on each side. Click a side one, use the arrows,
+    // swipe/drag, or wait: it advances on its own.
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const carousel = document.querySelector('.carousel');
+    const frame = document.querySelector('.car-frame');
+    const titleEl = document.getElementById('car-title');
+    const countEl = document.getElementById('car-count');
+    const n = slides.length;
+    let current = 0;
+    let timer = null;
+
+    function layout() {
+      slides.forEach((el, i) => {
+        // Shortest signed distance to the current slide, wrapping around.
+        let d = ((i - current) % n + n) % n;
+        if (d > n / 2) d -= n;
+        el.dataset.pos = Math.abs(d) <= 1 ? d : (d < 0 ? 'far-left' : 'far-right');
+        el.tabIndex = d === 0 ? 0 : -1;
+        el.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+      });
+      titleEl.textContent = slides[current].dataset.title;
+      countEl.textContent =
+        String(current + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
+    }
+
+    function show(i) {
+      current = (i + n) % n;
+      layout();
+    }
+
+    function start() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      stop();
+      timer = setInterval(() => show(current + 1), 3500);
+    }
+
+    function stop() { clearInterval(timer); }
+
+    // Clicking a side slide brings it to the centre instead of opening it.
+    slides.forEach((el, i) => {
+      el.addEventListener('click', e => {
+        if (i !== current) {
+          e.preventDefault();
+          show(i);
+        }
+      });
+    });
+
+    document.getElementById('car-prev').addEventListener('click', () => show(current - 1));
+    document.getElementById('car-next').addEventListener('click', () => show(current + 1));
+
+    // Swipe / drag
+    let startX = null;
+    frame.addEventListener('pointerdown', e => { startX = e.clientX; });
+    frame.addEventListener('pointerup', e => {
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      startX = null;
+      if (Math.abs(dx) > 40) {
+        show(current + (dx < 0 ? 1 : -1));
+        frame.addEventListener('click', e => e.preventDefault(), { once: true, capture: true });
+      }
+    });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    layout();
+    start();
+  </script>
 
 </body>
 </html>
