@@ -2,17 +2,17 @@
 
 Site portfolio statique présentant mes projets de développement web et de design d'interfaces, réalisé en HTML, CSS et JavaScript vanilla (aucune dépendance, aucun build).
 
-🔗 Pages principales : Index · Work · About · Contact
+🔗 Pages principales : Index · Production · About · Contact
 
 ## Structure du projet
 
 ```
 .
 ├── index.html              Page d'accueil
-├── work.html                Liste des projets (avec filtres par catégorie)
-├── about.html                Parcours & compétences
-├── contact.html              Coordonnées & CV
-├── work/                    Études de cas (une page par projet)
+├── work.html               Page « Production » : liste des projets (filtres par domaine et type)
+├── about.html              Parcours & compétences
+├── contact.html            Coordonnées, CV et carrousel des projets
+├── work/                   Études de cas (une page par projet)
 │   ├── halles-beziers.html
 │   ├── musee-fabi.html
 │   ├── gram.html
@@ -20,9 +20,18 @@ Site portfolio statique présentant mes projets de développement web et de desi
 │   ├── printemps-culture.html
 │   └── dominos.html
 └── assets/
-    ├── css/style.css        Feuille de style commune à toutes les pages
-    ├── js/case.js            Parallax + visionneuse (lightbox) des études de cas
-    ├── images/                Captures d'écran et visuels des projets
+    ├── css/style.css       Feuille de style commune à toutes les pages
+    ├── js/case.js          Parallax + visionneuse (lightbox) des études de cas
+    ├── fonts/              Un dossier par font, avec sa licence
+    │   ├── cape/           Cape (texte)
+    │   └── yellow-banana/  Yellow Banana (titres)
+    ├── images/             Visuels, un dossier par projet (même nom que la page d'étude de cas)
+    │   ├── halles-beziers/
+    │   ├── musee-fabi/
+    │   ├── gram/
+    │   ├── promocards/
+    │   ├── printemps-culture/
+    │   └── dominos/
     └── cv-lilian-cornet.pdf  CV téléchargeable
 ```
 

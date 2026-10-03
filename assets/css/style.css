@@ -5,13 +5,13 @@
 
 @font-face {
   font-family: 'Cape';
-  src: url('../fonts/Cape.ttf') format('truetype');
+  src: url('../fonts/cape/Cape.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Yellow Banana';
-  src: url('../fonts/YellowBanana.otf') format('opentype');
+  src: url('../fonts/yellow-banana/YellowBanana.otf') format('opentype');
   font-display: swap;
 }
 
