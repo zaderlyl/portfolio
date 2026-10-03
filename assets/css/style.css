@@ -220,21 +220,22 @@ h1 {
 .rows-work {
   align-self: stretch;
   list-style: none;
-  margin-top: clamp(40px, 8vh, 88px);
-  margin-left: calc(-1 * var(--pad));
-  margin-right: calc(-1 * var(--pad));
+  margin-top: clamp(32px, 6vh, 64px);
   text-align: left;
 }
 
-.rows-work li { border-top: 1px solid var(--ink); }
-.rows-work li:last-child { border-bottom: 1px solid var(--ink); }
+.rows-work li { border-top: 1px solid var(--line); }
+.rows-work li:last-child { border-bottom: 1px solid var(--line); }
 
 .rows-work a {
   position: relative;
   display: grid;
-  grid-template-columns: clamp(48px, 6vw, 80px) 1fr;
+  grid-template-columns: clamp(40px, 6vw, 72px) 1fr;
+  align-items: baseline;
   isolation: isolate;
   overflow: hidden;
+  padding: 0 14px;
+  transition: padding 0.3s ease;
 }
 
 .rows-work a::before {
@@ -271,62 +272,45 @@ h1 {
 .rows-work .ridx {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid var(--line);
-}
-
-.rows-work .ridx span {
-  transform: rotate(-90deg);
-  white-space: nowrap;
-  text-transform: uppercase;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
-  font-size: 0.72rem;
   color: var(--muted);
   transition: color 0.01s linear 0.16s;
 }
 
-.rows-work a:hover .ridx span { color: rgba(236, 231, 225, 0.6); }
+.rows-work a:hover .ridx { color: rgba(236, 231, 225, 0.6); }
 
 .rows-work .rcontent {
   position: relative;
   z-index: 1;
-  padding: calc(0.55em + 26px) var(--pad) calc(0.55em + 26px) 20px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding: 0.1em 0 0.05em;
 }
 
 .rows-work .rtitle {
   font-family: var(--font-display);
-  display: block;
-  font-size: clamp(2.6rem, 8.5vw, 7rem);
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  line-height: 1.35;
+  line-height: 1.2;
   transition: color 0.01s linear 0.16s;
 }
 
 .rows-work a:hover .rtitle { color: var(--bg); }
 
 .rows-work .rmeta {
-  position: absolute;
-  left: 20px;
-  right: var(--pad);
-  bottom: 0.55em;
-  text-align: center;
-  display: block;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  opacity: 0;
-  transition: opacity 0.25s ease, color 0.01s linear 0.16s;
+  transition: color 0.01s linear 0.16s;
 }
 
-.rows-work a:hover .rmeta {
-  opacity: 1;
-  color: rgba(236, 231, 225, 0.6);
-}
+.rows-work a:hover .rmeta { color: rgba(236, 231, 225, 0.7); }
 
 .rows-work li.filtered-out { display: none; }
 
