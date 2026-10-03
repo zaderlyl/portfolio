@@ -171,6 +171,23 @@ h1 {
   padding-right: 0.25em;
 }
 
+/* Traduction française affichée au survol */
+.rows a .tr {
+  font-size: 0.2em;
+  letter-spacing: 0.08em;
+  color: rgba(236, 231, 225, 0.6);
+  opacity: 0;
+  transform: translateX(-0.6em);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+
+.rows a:hover .tr,
+.rows a:focus-visible .tr {
+  opacity: 1;
+  transform: none;
+}
+
 .rows a:hover sup,
 .rows a:hover .meta { color: rgba(236, 231, 225, 0.6); }
 
