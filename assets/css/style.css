@@ -1,7 +1,19 @@
 /* ============================================
    Lilian Cornet — Portfolio
-   Minimaliste : Fragment Mono, beige, noir
+   Minimaliste : Cape (texte), Yellow Banana (titres), beige, noir
    ============================================ */
+
+@font-face {
+  font-family: 'Cape';
+  src: url('../fonts/Cape.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yellow Banana';
+  src: url('../fonts/YellowBanana.otf') format('opentype');
+  font-display: swap;
+}
 
 :root {
   --bg: rgb(236, 231, 225);
@@ -9,6 +21,8 @@
   --muted: rgba(26, 24, 24, 0.5);
   --line: rgba(26, 24, 24, 0.25);
   --pad: clamp(20px, 4vw, 56px);
+  --font-body: 'Cape', sans-serif;
+  --font-display: 'Yellow Banana', 'Cape', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,8 +32,8 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Fragment Mono', monospace;
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.7;
   min-height: 100vh;
   display: flex;
@@ -105,6 +119,7 @@ main {
 }
 
 h1 {
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(2.2rem, 7vw, 5.5rem);
   line-height: 1.05;
@@ -138,6 +153,7 @@ h1 {
 .rows li:last-child { border-bottom: 1px solid var(--ink); }
 
 .rows a {
+  font-family: var(--font-display);
   display: flex;
   align-items: baseline;
   gap: 0.4em;
@@ -150,12 +166,14 @@ h1 {
 }
 
 .rows a sup {
+  font-family: var(--font-body);
   font-size: 0.18em;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
 
 .rows a .meta {
+  font-family: var(--font-body);
   margin-left: auto;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -173,6 +191,7 @@ h1 {
 
 /* Traduction française affichée au survol */
 .rows a .tr {
+  font-family: var(--font-body);
   font-size: 0.2em;
   letter-spacing: 0.08em;
   color: rgba(236, 231, 225, 0.6);
@@ -231,6 +250,23 @@ h1 {
 
 .rows-work a:hover::before { transform: scaleY(1); }
 
+/* Aperçu discret du projet en fond au survol */
+.rows-work a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--preview) center / cover no-repeat;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rows-work a:hover::after {
+  opacity: 0.28;
+  transform: scale(1);
+}
+
 .rows-work .ridx {
   position: relative;
   z-index: 1;
@@ -260,6 +296,7 @@ h1 {
 }
 
 .rows-work .rtitle {
+  font-family: var(--font-display);
   display: block;
   font-size: clamp(2.6rem, 8.5vw, 7rem);
   text-transform: uppercase;
@@ -292,35 +329,78 @@ h1 {
 
 .rows-work li.filtered-out { display: none; }
 
-/* ---------- Filtres par catégorie ---------- */
+/* ---------- Filtres : "All" + catégories à menu déroulant ---------- */
 
 .filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 10px;
   margin-top: 40px;
 }
 
-.filters button {
+.fbtn,
+.fmenu button {
   font: inherit;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: none;
-  border: 1px solid var(--ink);
-  color: var(--muted);
-  padding: 6px 16px;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.filters button:hover { color: var(--ink); }
+.fbtn {
+  background: none;
+  border: 1px solid var(--ink);
+  color: var(--muted);
+  padding: 6px 16px;
+}
 
-.filters button.active {
+.fbtn:hover,
+.ftrigger[aria-expanded="true"] { color: var(--ink); }
+
+.fbtn.active {
   background: var(--ink);
   color: var(--bg);
 }
+
+.fdrop { position: relative; }
+
+.ftrigger .caret {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 0.25s ease;
+}
+
+.ftrigger[aria-expanded="true"] .caret { transform: rotate(180deg); }
+
+.fmenu {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 10;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--ink);
+}
+
+.fmenu[hidden] { display: none; }
+
+.fmenu button {
+  background: none;
+  border: 0;
+  white-space: nowrap;
+  color: var(--muted);
+  padding: 8px 16px;
+}
+
+.fmenu button:hover { background: var(--line); color: var(--ink); }
+
+.fmenu button.active { background: var(--ink); color: var(--bg); }
 
 .rows li.filtered-out { display: none; }
 
@@ -500,7 +580,7 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 24px clamp(20px, 4vw, 56px);
-  font-family: 'Fragment Mono', monospace;
+  font-family: var(--font-body);
 }
 
 .lightbox[hidden] { display: none; }
@@ -635,6 +715,7 @@ h1 {
 /* ---------- Contact ---------- */
 
 .big-link {
+  font-family: var(--font-display);
   display: inline-block;
   align-self: flex-start;
   font-size: clamp(1.3rem, 4.5vw, 3.2rem);

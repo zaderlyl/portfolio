@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Production — Lilian Cornet</title>
   <meta name="description" content="A selection of product and interface design projects.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -24,19 +21,35 @@
 
   <main class="work-center">
     <p class="kicker">01 — Production</p>
-    <h1>Selected work</h1>
+    <h1>My productions</h1>
 
-    <div class="filters" role="group" aria-label="Filter by category">
-      <button type="button" class="active" data-filter="all">All</button>
-      <button type="button" data-filter="site-vitrine">Showcase site</button>
-      <button type="button" data-filter="site-fonctionnel">Functional site</button>
-      <button type="button" data-filter="identite-graphique">Graphic identity</button>
-      <button type="button" data-filter="autre-projet">Other project</button>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" class="fbtn active" id="filter-all">All</button>
+      <div class="fdrop" data-name="Development">
+        <button type="button" class="fbtn ftrigger" aria-haspopup="true" aria-expanded="false">
+          <span class="flabel">Development</span> <span class="caret" aria-hidden="true">↓</span>
+        </button>
+        <div class="fmenu" hidden>
+          <button type="button" data-group="dev" data-type="all">All development</button>
+          <button type="button" data-group="dev" data-type="site">Site</button>
+          <button type="button" data-group="dev" data-type="game">Game</button>
+        </div>
+      </div>
+      <div class="fdrop" data-name="Graphic design">
+        <button type="button" class="fbtn ftrigger" aria-haspopup="true" aria-expanded="false">
+          <span class="flabel">Graphic design</span> <span class="caret" aria-hidden="true">↓</span>
+        </button>
+        <div class="fmenu" hidden>
+          <button type="button" data-group="graphic" data-type="all">All graphic design</button>
+          <button type="button" data-group="graphic" data-type="identity">Identity</button>
+          <button type="button" data-group="graphic" data-type="print">Print</button>
+        </div>
+      </div>
     </div>
 
     <ul class="rows-work">
-      <li data-cat="site-vitrine">
-        <a href="work/halles-beziers.html">
+      <li data-group="dev" data-type="site">
+        <a href="work/halles-beziers.html" style="--preview: url('assets/images/sae-accueil.jpg')">
           <span class="ridx"><span>01</span></span>
           <span class="rcontent">
             <span class="rtitle">Halles de Béziers</span>
@@ -44,8 +57,8 @@
           </span>
         </a>
       </li>
-      <li data-cat="site-fonctionnel">
-        <a href="work/musee-fabi.html">
+      <li data-group="dev" data-type="site">
+        <a href="work/musee-fabi.html" style="--preview: url('assets/images/musee-accueil.jpg')">
           <span class="ridx"><span>02</span></span>
           <span class="rcontent">
             <span class="rtitle">Musée FABI</span>
@@ -53,8 +66,8 @@
           </span>
         </a>
       </li>
-      <li data-cat="autre-projet">
-        <a href="work/gram.html">
+      <li data-group="dev" data-type="game">
+        <a href="work/gram.html" style="--preview: url('assets/images/gram-gameplay.jpg')">
           <span class="ridx"><span>03</span></span>
           <span class="rcontent">
             <span class="rtitle">GRAM</span>
@@ -62,8 +75,8 @@
           </span>
         </a>
       </li>
-      <li data-cat="site-fonctionnel">
-        <a href="work/promocards.html">
+      <li data-group="dev" data-type="site">
+        <a href="work/promocards.html" style="--preview: url('assets/images/tp7-editor.jpg')">
           <span class="ridx"><span>04</span></span>
           <span class="rcontent">
             <span class="rtitle">PromoCards</span>
@@ -71,8 +84,8 @@
           </span>
         </a>
       </li>
-      <li data-cat="identite-graphique">
-        <a href="work/printemps-culture.html">
+      <li data-group="graphic" data-type="print">
+        <a href="work/printemps-culture.html" style="--preview: url('assets/images/printemps-poster.jpg')">
           <span class="ridx"><span>05</span></span>
           <span class="rcontent">
             <span class="rtitle">Printemps de la Culture</span>
@@ -80,8 +93,8 @@
           </span>
         </a>
       </li>
-      <li data-cat="identite-graphique">
-        <a href="work/dominos.html">
+      <li data-group="graphic" data-type="identity">
+        <a href="work/dominos.html" style="--preview: url('assets/images/dominos-mur.jpg')">
           <span class="ridx"><span>06</span></span>
           <span class="rcontent">
             <span class="rtitle">Domino's</span>
@@ -93,19 +106,76 @@
   </main>
 
   <script>
-    // Filter projects by category.
-    const buttons = document.querySelectorAll('.filters button');
+    // Filters: "All", or a category (development / graphic design) whose
+    // dropdown lists its sub-categories (site, game, identity, print).
+    const allBtn = document.getElementById('filter-all');
+    const drops = document.querySelectorAll('.fdrop');
     const items = document.querySelectorAll('.rows-work li');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        items.forEach(li => {
-          li.classList.toggle('filtered-out', f !== 'all' && li.dataset.cat !== f);
+    function closeMenus() {
+      drops.forEach(d => {
+        d.querySelector('.fmenu').hidden = true;
+        d.querySelector('.ftrigger').setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function applyFilter(group, type) {
+      items.forEach(li => {
+        const hidden =
+          (group !== 'all' && li.dataset.group !== group) ||
+          (type !== 'all' && li.dataset.type !== type);
+        li.classList.toggle('filtered-out', hidden);
+      });
+    }
+
+    function resetDrops(except) {
+      drops.forEach(d => {
+        if (d === except) return;
+        d.querySelector('.ftrigger').classList.remove('active');
+        d.querySelector('.flabel').textContent = d.dataset.name;
+        d.querySelectorAll('.fmenu button').forEach(b => b.classList.remove('active'));
+      });
+    }
+
+    allBtn.addEventListener('click', () => {
+      closeMenus();
+      resetDrops(null);
+      allBtn.classList.add('active');
+      applyFilter('all', 'all');
+    });
+
+    drops.forEach(drop => {
+      const trigger = drop.querySelector('.ftrigger');
+      const menu = drop.querySelector('.fmenu');
+
+      trigger.addEventListener('click', () => {
+        const open = menu.hidden;
+        closeMenus();
+        menu.hidden = !open;
+        trigger.setAttribute('aria-expanded', open);
+      });
+
+      menu.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const type = btn.dataset.type;
+          resetDrops(drop);
+          allBtn.classList.remove('active');
+          menu.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+          trigger.classList.add('active');
+          drop.querySelector('.flabel').textContent =
+            type === 'all' ? drop.dataset.name : drop.dataset.name + ' / ' + btn.textContent;
+          applyFilter(btn.dataset.group, type);
+          closeMenus();
         });
       });
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.fdrop')) closeMenus();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenus();
     });
   </script>
 
