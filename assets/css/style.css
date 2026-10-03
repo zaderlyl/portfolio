@@ -684,18 +684,60 @@ h1 {
 
 .services { list-style: none; }
 
-.services li {
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-  padding: 14px 0;
+.services > li {
   border-bottom: 1px solid var(--line);
   text-transform: uppercase;
+  cursor: default;
+  outline: none;
 }
 
-.services li:first-child { border-top: 1px solid var(--line); }
+.services > li:first-child { border-top: 1px solid var(--line); }
+
+.services .srow {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  align-items: baseline;
+  padding: 14px 0;
+}
 
 .services .num { font-size: 0.72rem; color: var(--muted); }
+
+.services .caret {
+  font-size: 0.8rem;
+  color: var(--muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Compétences : menu déroulant au survol (ou au focus, pour le tactile).
+   La liste réserve la place du menu ouvert pour que la page ne bouge pas. */
+.services { padding-bottom: 9rem; }
+
+.services .skills {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services .skills ul {
+  list-style: none;
+  overflow: hidden;
+  min-height: 0;
+  padding-left: 2.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.services .skills li { padding: 3px 0; }
+.services .skills li:last-child { padding-bottom: 16px; }
+
+.services > li:hover .skills,
+.services > li:focus-within .skills { grid-template-rows: 1fr; }
+
+.services > li:hover .caret,
+.services > li:focus-within .caret {
+  transform: rotate(180deg);
+  color: var(--ink);
+}
 
 /* ---------- Contact ---------- */
 
