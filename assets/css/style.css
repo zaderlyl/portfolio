@@ -1,17 +1,26 @@
 /* ============================================
    Lilian Cornet — Portfolio
-   Minimaliste : Cape (texte), Yellow Banana (titres), beige, noir
+   Minimaliste : Hind (texte), Neco (titres), beige, noir
    ============================================ */
 
 @font-face {
-  font-family: 'Cape';
-  src: url('../fonts/cape/Cape.ttf') format('truetype');
+  font-family: 'Neco';
+  src: url('../fonts/neco/Neco-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Yellow Banana';
-  src: url('../fonts/yellow-banana/YellowBanana.otf') format('opentype');
+  font-family: 'Hind';
+  src: url('../fonts/hind/Hind-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind';
+  src: url('../fonts/hind/Hind-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-display: swap;
 }
 
@@ -21,8 +30,8 @@
   --muted: rgba(26, 24, 24, 0.5);
   --line: rgba(26, 24, 24, 0.25);
   --pad: clamp(20px, 4vw, 56px);
-  --font-body: 'Cape', sans-serif;
-  --font-display: 'Yellow Banana', 'Cape', sans-serif;
+  --font-body: 'Hind', sans-serif;
+  --font-display: 'Neco', 'Hind', serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,7 +42,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   min-height: 100vh;
   display: flex;
@@ -100,6 +109,7 @@ nav a[aria-current="page"]::after {
 
 main {
   position: relative;
+  overflow-x: clip;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -674,7 +684,7 @@ h1 {
 }
 
 @media (max-width: 860px) {
-  .case-layout { grid-template-columns: 1fr; }
+  .case-layout { grid-template-columns: minmax(0, 1fr); }
   .shots { margin-top: 24px; }
   .shot { width: 88%; }
 }

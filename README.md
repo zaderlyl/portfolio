@@ -26,8 +26,9 @@ Site portfolio statique présentant mes projets de développement web et de desi
     ├── css/style.css       Feuille de style commune à toutes les pages
     ├── js/case.js          Parallax + visionneuse (lightbox) des études de cas
     ├── fonts/              Un dossier par font, avec sa licence
-    │   ├── cape/           Cape (texte)
-    │   └── yellow-banana/  Yellow Banana (titres)
+    │   ├── neco/           Neco (titres) — licence ITF Free Font License
+    │   └── hind/           Hind (texte) — licence OFL, sous-ensemble latin
+    ├── dev/                Outil de test des polices (font-tester.js + polices candidates), invisible par défaut
     ├── icons/              Favicon et icône tactile (« LC »)
     ├── images/             og-image.png (aperçu de partage) et visuels, un dossier par projet (même nom que la page d'étude de cas)
     │   ├── halles-beziers/
@@ -40,6 +41,10 @@ Site portfolio statique présentant mes projets de développement web et de desi
     │   └── lyrics-overlay/
     └── cv-lilian-cornet.pdf  CV téléchargeable
 ```
+
+## Tester des polices en direct
+
+Ajouter `?fonts` à n'importe quelle URL (ex. `http://localhost:8080/work.html?fonts`) ou appuyer sur **Shift+F** affiche un panneau pour changer la police des titres et du texte, la taille des titres et la casse, en temps réel. Le choix est gardé d'une page à l'autre. `?fonts=off` (ou ✕, ou Shift+F) le désactive : les visiteurs ne le voient jamais et rien n'est chargé tant qu'il est éteint.
 
 ## Projets présentés
 
