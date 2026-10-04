@@ -20,7 +20,8 @@ Site portfolio statique présentant mes projets de développement web et de desi
 │   ├── promocards.html
 │   ├── printemps-culture.html
 │   ├── dominos.html
-│   └── contribution-board.html
+│   ├── contribution-board.html
+│   └── lyrics-overlay.html
 └── assets/
     ├── css/style.css       Feuille de style commune à toutes les pages
     ├── js/case.js          Parallax + visionneuse (lightbox) des études de cas
@@ -35,7 +36,8 @@ Site portfolio statique présentant mes projets de développement web et de desi
     │   ├── promocards/
     │   ├── printemps-culture/
     │   ├── dominos/
-    │   └── contribution-board/
+    │   ├── contribution-board/
+    │   └── lyrics-overlay/
     └── cv-lilian-cornet.pdf  CV téléchargeable
 ```
 
@@ -50,6 +52,7 @@ Site portfolio statique présentant mes projets de développement web et de desi
 | [Printemps de la Culture](work/printemps-culture.html) | Identité graphique | Affiche, brochure |
 | [Domino's](work/dominos.html) | Identité graphique | Brand book |
 | [Contribution Board](work/contribution-board.html) | Outil (GitHub Action) | Node.js, SVG animé |
+| [Lyrics Overlay](work/lyrics-overlay.html) | Outil (app de bureau) | Electron, API Spotify |
 
 ## Développement local
 

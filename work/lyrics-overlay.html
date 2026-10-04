@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lyrics Overlay — Lilian Cornet</title>
+  <meta name="description" content="Case study: Lyrics Overlay, an Electron desktop overlay showing synchronised lyrics for the song playing on Spotify.">
+  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon-32.png">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#ece7e1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lilian Cornet">
+  <meta property="og:title" content="Lyrics Overlay — Lilian Cornet">
+  <meta property="og:description" content="Case study: Lyrics Overlay, an Electron desktop overlay showing synchronised lyrics for the song playing on Spotify.">
+  <meta property="og:url" content="https://zaderlyl.github.io/portfolio-v2/work/lyrics-overlay.html">
+  <meta property="og:image" content="https://zaderlyl.github.io/portfolio-v2/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="../index.html">Lilian Cornet</a>
+    <nav>
+      <a href="../index.html">Index</a>
+      <a href="../work.html" aria-current="page">Production</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="kicker">Case study — 08</p>
+    <h1>Lyrics Overlay</h1>
+
+    <div class="case-layout">
+      <div class="case-text">
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Context</dt>
+            <dd>Personal project</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd>Design &amp; development</dd>
+          </div>
+          <div>
+            <dt>Deliverables</dt>
+            <dd>Electron desktop app (macOS)</dd>
+          </div>
+        </dl>
+
+        <div class="prose">
+          <p>
+            Lyrics Overlay is a discreet desktop overlay that shows the
+            synchronised lyrics of whatever is playing on Spotify: a small
+            semi-transparent panel pinned to the top-right of the screen,
+            always on top — even over full-screen apps — and fully
+            click-through, so it never gets in the way.
+          </p>
+          <p>
+            Spotify's official Web API provides the current track and playback
+            position. The login uses OAuth 2.0 with PKCE, so there is no
+            client secret to store: a short-lived local server catches the
+            redirect, and tokens are refreshed automatically. The app polls
+            every few seconds and handles expired sessions and rate limits.
+            Lyrics come from the free LRCLIB API, queried with the track's
+            title, artist, album and duration; titles are cleaned of suffixes
+            like “Remastered” or “feat.” to improve matches, with a search
+            fallback.
+          </p>
+          <p>
+            Between two polls the app doesn't wait: the renderer estimates the
+            playback position from the last known value and the time elapsed,
+            and a binary search over the timestamped lines finds the current
+            one on every animation frame, so the previous, current and next
+            lines change in time with the music. A global shortcut (⌥⌘L) shows
+            or hides the panel, and a ♪ icon in the menu bar offers
+            reconnecting and quitting.
+          </p>
+          <p>
+            This project taught me the Electron architecture (main process,
+            preload bridge, isolated renderer with a strict content security
+            policy), OAuth in a desktop context, and how to build a smooth
+            real-time display on top of a slow, polled API.
+          </p>
+        </div>
+
+        <div class="pager">
+          <a href="contribution-board.html">← Previous project</a>
+          <a href="../work.html">All work →</a>
+        </div>
+
+      </div>
+
+      <aside class="shots shots-wide" aria-label="Overlay screenshots">
+        <figure class="shot" data-speed="0.03">
+          <img src="../assets/images/lyrics-overlay/synced-lyrics.jpg" alt="The overlay at the top-right of the screen showing the previous, current and next lyric lines over a desktop window">
+          <figcaption>Synced lyrics — demo text</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.09">
+          <img src="../assets/images/lyrics-overlay/no-lyrics.jpg" alt="The overlay showing the track title and a “no lyrics found” message">
+          <figcaption>No lyrics found</figcaption>
+        </figure>
+        <figure class="shot" data-speed="0.15">
+          <img src="../assets/images/lyrics-overlay/idle.jpg" alt="The overlay showing the “nothing playing” message">
+          <figcaption>Nothing playing</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Lilian Cornet</span>
+    <span>Case study — 08</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lb-top">
+      <span class="lb-counter" id="lb-counter">01 / 03</span>
+      <button type="button" id="lb-close">[ Close ]</button>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-frame">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <p class="lb-caption" id="lb-caption"></p>
+    </div>
+    <div class="lb-bottom">
+      <button type="button" id="lb-prev">← Previous</button>
+      <button type="button" id="lb-next">Next →</button>
+    </div>
+  </div>
+
+  <script src="../assets/js/case.js"></script>
+
+</body>
+</html>
