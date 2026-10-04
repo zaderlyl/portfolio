@@ -452,6 +452,13 @@ h1 {
   letter-spacing: 0.06em;
 }
 
+.pager-top {
+  max-width: none;
+  margin: 0 0 clamp(24px, 4vh, 40px);
+  padding: 0 0 14px;
+  border-top: 0;
+  border-bottom: 1px solid var(--line);
+}
 .pager a { color: var(--muted); }
 .pager a:hover { color: var(--ink); }
 
