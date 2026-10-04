@@ -1,26 +1,19 @@
 /* ============================================
    Lilian Cornet — Portfolio
-   Minimaliste : Hind (texte), Neco (titres), beige, noir
+   Minimaliste : Itim (texte), Titan One (titres), beige, noir
    ============================================ */
 
 @font-face {
-  font-family: 'Neco';
-  src: url('../fonts/neco/Neco-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Hind';
-  src: url('../fonts/hind/Hind-Regular.woff2') format('woff2');
+  font-family: 'Titan One';
+  src: url('../fonts/titan-one/TitanOne-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Hind';
-  src: url('../fonts/hind/Hind-Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'Itim';
+  src: url('../fonts/itim/Itim-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -30,8 +23,8 @@
   --muted: rgba(26, 24, 24, 0.5);
   --line: rgba(26, 24, 24, 0.25);
   --pad: clamp(20px, 4vw, 56px);
-  --font-body: 'Hind', sans-serif;
-  --font-display: 'Neco', 'Hind', serif;
+  --font-body: 'Itim', sans-serif;
+  --font-display: 'Titan One', 'Itim', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

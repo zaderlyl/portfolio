@@ -35,8 +35,8 @@
 
   const F = (name, files, titleWeight, note = '') => ({ name, files, titleWeight, note });
   const FONTS = [
-    F('Neco', [[700, SITE + 'neco/Neco-Bold.woff2']], 700, 'serif'),
-    F('Hind', [[400, SITE + 'hind/Hind-Regular.woff2'], [700, SITE + 'hind/Hind-Bold.woff2']], 700),
+    F('Neco', [[700, DEV + 'fonts/Neco-Bold.woff2']], 700, 'serif'),
+    F('Hind', [[400, DEV + 'fonts/Hind-Regular.woff2'], [700, DEV + 'fonts/Hind-Bold.woff2']], 700),
     F('Chillax', [[700, DEV + 'fonts/Chillax-Bold.woff2']], 700),
     F('Excon', [[700, DEV + 'fonts/Excon-Bold.woff2']], 700),
     F('Pally', [[700, DEV + 'fonts/Pally-Bold.woff2']], 700),
@@ -44,18 +44,18 @@
     F('Boxing', [[400, DEV + 'fonts/Boxing-Regular.woff2']], 400, 'très large'),
     F('Epilogue', [['100 900', DEV + 'fonts/Epilogue-Variable.woff2']], 800),
     F('Chubbo', [[400, DEV + 'fonts/Chubbo-Regular.woff2'], [700, DEV + 'fonts/Chubbo-Bold.woff2']], 700),
-    F('Titan One', [[400, DEV + 'fonts/TitanOne-Regular.woff2']], 400),
+    F('Titan One', [[400, SITE + 'titan-one/TitanOne-Regular.woff2']], 400),
     F('Lilita One', [[400, DEV + 'fonts/LilitaOne-Regular.woff2']], 400),
     F('Handlee', [[400, DEV + 'fonts/Handlee-Regular.woff2']], 400),
     F('Patrick Hand', [[400, DEV + 'fonts/PatrickHand-Regular.woff2']], 400),
     F('Kalam', [[300, DEV + 'fonts/Kalam-Light.woff2'], [400, DEV + 'fonts/Kalam-Regular.woff2']], 400),
-    F('Itim', [[400, DEV + 'fonts/Itim-Regular.woff2']], 400),
+    F('Itim', [[400, SITE + 'itim/Itim-Regular.woff2']], 400),
     { name: 'Système sans-serif', css: 'system-ui, -apple-system, sans-serif', titleWeight: 700, files: [] },
     { name: 'Système serif', css: 'Georgia, "Times New Roman", serif', titleWeight: 700, files: [] },
   ];
   FONTS.forEach(f => { f.family = f.css ? null : 'FT ' + f.name; });
 
-  const DEFAULTS = { title: 'Neco', text: 'Hind', scale: 100, upper: true, open: true };
+  const DEFAULTS = { title: 'Titan One', text: 'Itim', scale: 100, upper: true, open: true };
   let state = { ...DEFAULTS };
   try { state = { ...DEFAULTS, ...JSON.parse(safe.get(STORE) || '{}') }; } catch { /* défauts */ }
   const byName = n => FONTS.find(f => f.name === n) || FONTS[0];

@@ -26,8 +26,8 @@ Site portfolio statique présentant mes projets de développement web et de desi
     ├── css/style.css       Feuille de style commune à toutes les pages
     ├── js/case.js          Parallax + visionneuse (lightbox) des études de cas
     ├── fonts/              Un dossier par font, avec sa licence
-    │   ├── neco/           Neco (titres) — licence ITF Free Font License
-    │   └── hind/           Hind (texte) — licence OFL, sous-ensemble latin
+    │   ├── titan-one/      Titan One (titres) — licence OFL, sous-ensemble latin
+    │   └── itim/           Itim (texte) — licence OFL, sous-ensemble latin
     ├── dev/                Outil de test des polices (font-tester.js + polices candidates), invisible par défaut
     ├── icons/              Favicon et icône tactile (« LC »)
     ├── images/             og-image.png (aperçu de partage) et visuels, un dossier par projet (même nom que la page d'étude de cas)
