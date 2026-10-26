@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Downloads/cape-font"
+		},
+		{
+			"path": "../../../../Downloads/yellow-banana-display-font"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "portfolio-v2"
+	}
+}
