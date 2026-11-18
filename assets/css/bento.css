@@ -359,6 +359,8 @@ a.wk.gen:hover { background-position: 12px 12px; }
 
 @media (max-width: 960px) {
   .pc { grid-template-columns: 1fr; grid-template-areas: "title" "edu" "obj" "exp" "prix" "eng" "back"; }
+  .pc-title { min-height: 130px; }
+  .pc-back { min-height: 90px; }
   .pc-list li { grid-template-columns: 84px 1fr; }
   .pc-when { grid-column: 2; text-align: left; }
 }
@@ -400,6 +402,7 @@ a.wk.gen:hover { background-position: 12px 12px; }
   .pj > .tile { grid-area: auto; grid-column: 1 / -1 !important; }
   .pj-title { order: -3; min-height: 160px; }
   .pj-hero { order: -2; min-height: 260px; }
+  .pj-hero.gen { min-height: 150px; }
   .pj-meta { order: -1; }
   .pj-shot { aspect-ratio: 16 / 10; }
 }
