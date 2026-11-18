@@ -3,116 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Work — Lilian Cornet</title>
-  <meta name="description" content="Sélection de projets de design de produits et d'interfaces.">
+  <title>Projets — Lilian Cornet</title>
+  <meta name="description" content="Projets de Lilian Cornet : sites web, jeu vidéo, identités graphiques.">
+  <meta name="theme-color" content="#050505">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bento.css">
+  <script defer src="assets/js/bento.js"></script>
 </head>
 <body>
 
-  <header>
-    <a class="logo" href="index.html">Lilian Cornet</a>
-    <nav>
-      <a href="index.html">Index</a>
-      <a href="work.html" aria-current="page">Work</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <canvas id="bg" class="bg" aria-hidden="true"></canvas>
 
-  <main class="work-center">
-    <p class="kicker">01 — Work</p>
-    <h1>Travaux sélectionnés</h1>
+  <main class="bento wk-grid">
 
-    <div class="filters" role="group" aria-label="Filtrer par catégorie">
-      <button type="button" class="active" data-filter="all">Tous</button>
-      <button type="button" data-filter="site-vitrine">Site vitrine</button>
-      <button type="button" data-filter="site-fonctionnel">Site fonctionnel</button>
-      <button type="button" data-filter="identite-graphique">Identité graphique</button>
-      <button type="button" data-filter="autre-projet">Autre projet</button>
-    </div>
+    <header class="tile wk-title w4h2" style="--i:0">
+      <span class="label">01 — Projets</span>
+      <h1 class="ab-h1">12 projets</h1>
+    </header>
 
-    <ul class="rows-work">
-      <li data-cat="site-vitrine">
-        <a href="work/halles-beziers.html">
-          <span class="ridx"><span>01</span></span>
-          <span class="rcontent">
-            <span class="rtitle">Halles de Béziers</span>
-            <span class="rmeta">Site vitrine · Visite 360° · 2026</span>
-          </span>
-        </a>
-      </li>
-      <li data-cat="site-fonctionnel">
-        <a href="work/musee-fabi.html">
-          <span class="ridx"><span>02</span></span>
-          <span class="rcontent">
-            <span class="rtitle">Musée FABI</span>
-            <span class="rmeta">Site fonctionnel · PHP · MySQL · 2026</span>
-          </span>
-        </a>
-      </li>
-      <li data-cat="autre-projet">
-        <a href="work/gram.html">
-          <span class="ridx"><span>03</span></span>
-          <span class="rcontent">
-            <span class="rtitle">GRAM</span>
-            <span class="rmeta">Autre projet · Jeu vidéo · Phaser 3 · 2026</span>
-          </span>
-        </a>
-      </li>
-      <li data-cat="site-fonctionnel">
-        <a href="work/promocards.html">
-          <span class="ridx"><span>04</span></span>
-          <span class="rcontent">
-            <span class="rtitle">PromoCards</span>
-            <span class="rmeta">Site fonctionnel · PHP · SQLite · 2026</span>
-          </span>
-        </a>
-      </li>
-      <li data-cat="identite-graphique">
-        <a href="work/printemps-culture.html">
-          <span class="ridx"><span>05</span></span>
-          <span class="rcontent">
-            <span class="rtitle">Printemps de la Culture</span>
-            <span class="rmeta">Identité graphique · Affiche · Brochure · 2026</span>
-          </span>
-        </a>
-      </li>
-      <li data-cat="identite-graphique">
-        <a href="work/dominos.html">
-          <span class="ridx"><span>06</span></span>
-          <span class="rcontent">
-            <span class="rtitle">Domino's</span>
-            <span class="rmeta">Identité graphique · Brand book · 2026</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <a class="tile back-tile wk-back w4h1" style="--i:1" href="./">
+      <span class="big">Retour</span>
+      <span class="go" aria-hidden="true" style="--dx:-1;--dy:0"><i>←</i></span>
+    </a>
+
+    <a class="tile wk w8h3" style="--i:0" href="work/halles-beziers.html">
+      <img src="assets/images/sae-accueil.jpg" alt="">
+      <span class="label">01</span>
+      <div><h2 class="big">Halles de Béziers</h2><p class="small">Site vitrine · Visite 360°</p></div>
+    </a>
+    <a class="tile wk w4h2" style="--i:1" href="work/musee-fabi.html">
+      <img src="assets/images/musee-accueil.jpg" alt="" loading="lazy">
+      <span class="label">02</span>
+      <div><h2 class="big">Musée FABI</h2><p class="small">Site dynamique · PHP · MySQL</p></div>
+    </a>
+    <a class="tile wk w4h2" style="--i:2" href="work/printemps-culture.html">
+      <img src="assets/images/printemps-cover.jpg" alt="" loading="lazy">
+      <span class="label">03</span>
+      <div><h2 class="big">Printemps de la Culture</h2><p class="small">Identité · Affiche · Brochure</p></div>
+    </a>
+    <a class="tile wk w4h2" style="--i:3" href="work/gram.html">
+      <img src="assets/images/gram-gameplay.jpg" alt="" loading="lazy">
+      <span class="label">04</span>
+      <div><h2 class="big">GRAM</h2><p class="small">Jeu vidéo · Phaser 3</p></div>
+    </a>
+    <a class="tile wk w4h2" style="--i:4" href="work/promocards.html">
+      <img src="assets/images/tp7-hub.jpg" alt="" loading="lazy">
+      <span class="label">05</span>
+      <div><h2 class="big">PromoCards</h2><p class="small">Plateforme · PHP · SQLite</p></div>
+    </a>
+    <a class="tile wk w4h2" style="--i:5" href="work/dominos.html">
+      <img src="assets/images/dominos-facade.jpg" alt="" loading="lazy">
+      <span class="label">06</span>
+      <div><h2 class="big">Domino's</h2><p class="small">Identité · Brand book</p></div>
+    </a>
+    <a class="tile wk gen p1 w4h2" style="--i:6" href="work/spoti-stat.html" data-l="S">
+      <div class="row top"><span class="label">07</span><span class="label">GitHub ↗</span></div>
+      <div><h2 class="big">Spoti-Stat</h2><p class="small">Dashboard · Last.fm · Deezer</p></div>
+    </a>
+    <a class="tile wk gen p2 w8h2" style="--i:7" href="work/piscine.html" data-l="P">
+      <div class="row top"><span class="label">08</span><span class="label">GitHub ↗</span></div>
+      <div><h2 class="big">Piscine</h2><p class="small">Plateforme d’exercices · MMI</p></div>
+    </a>
+    <a class="tile wk gen p4 w4h2" style="--i:15" href="work/repolink.html" data-l="R">
+      <div class="row top"><span class="label">09</span><span class="label">GitHub ↗</span></div>
+      <div><h2 class="big">RepoLink</h2><p class="small">Web app · TypeScript</p></div>
+    </a>
+    <a class="tile wk gen p6 w4h2" style="--i:11" href="work/phaser-ui-editor.html" data-l="P">
+      <div class="row top"><span class="label">10</span><span class="label">GitHub ↗</span></div>
+      <div><h2 class="big">Phaser UI Editor</h2><p class="small">Éditeur d’interfaces · Phaser</p></div>
+    </a>
+    <a class="tile wk gen p4 w4h2" style="--i:9" href="work/survivor.html" data-l="S">
+      <div class="row top"><span class="label">11</span><span class="label">GitHub ↗</span></div>
+      <div><h2 class="big">Survivor</h2><p class="small">Jeu navigateur · JavaScript</p></div>
+    </a>
+    <a class="tile wk gen p2 w8h2" style="--i:19" href="work/glass-garden.html" data-l="G">
+      <div class="row top"><span class="label">12</span><span class="label">GitHub ↗</span></div>
+      <div><h2 class="big">Glass Garden</h2><p class="small">Jeu d’aventure · JavaScript</p></div>
+    </a>
+
   </main>
-
-  <script>
-    // Filtrage des projets par catégorie.
-    const buttons = document.querySelectorAll('.filters button');
-    const items = document.querySelectorAll('.rows-work li');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        items.forEach(li => {
-          li.classList.toggle('filtered-out', f !== 'all' && li.dataset.cat !== f);
-        });
-      });
-    });
-  </script>
-
-  <footer>
-    <span>© 2026 Lilian Cornet</span>
-    <span>Work — 02 / 04</span>
-  </footer>
 
 </body>
 </html>

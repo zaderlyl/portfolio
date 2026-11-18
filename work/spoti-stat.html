@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spoti-Stat — Lilian Cornet</title>
+  <meta name="description" content="Tableau de bord de statistiques d&#x27;écoute musicale. Malgré son nom, le projet n&#x27;utilise pas l&#x27;API Spotify : les écoutes viennent de Last.fm, et les informat">
+  <meta name="theme-color" content="#050505">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/bento.css">
+  <script defer src="../assets/js/bento.js"></script>
+</head>
+<body>
+
+  <canvas id="bg" class="bg" aria-hidden="true"></canvas>
+
+  <main class="bento pj">
+
+    <div class="tile wk gen p1 pj-hero" style="--i:0" data-l="S"><span class="label">07 / 12</span></div>
+
+    <header class="tile pj-title" style="--i:1">
+      <span class="label">Projet 07</span>
+      <div>
+        <h1 class="pj-h1">Spoti-Stat</h1>
+        <p class="small">Dashboard · Last.fm · Deezer</p>
+      </div>
+    </header>
+
+    <dl class="tile pj-meta" style="--i:2">
+      <div><dt class="label">Contexte</dt><dd>Projet personnel</dd></div><div><dt class="label">Rôle</dt><dd>Conception & développement</dd></div><div><dt class="label">Statut</dt><dd>En ligne</dd></div><div><dt class="label">Livrable</dt><dd>Tableau de bord web</dd></div>
+    </dl>
+
+    <section class="tile pj-desc" style="--i:3">
+      <span class="label">Le projet</span>
+      <p>Tableau de bord de statistiques d'écoute musicale. Malgré son nom, le projet n'utilise pas l'API Spotify : les écoutes viennent de Last.fm, et les informations sur les morceaux (pochettes, durées, genres) viennent de Deezer.</p><p>Une action GitHub se lance toutes les 6 heures : elle récupère les dernières écoutes, complète le catalogue avec les infos Deezer et enregistre l'historique dans Supabase. Le site affiche ensuite les compteurs, les graphiques par jour et les top albums, plus le morceau en cours de lecture en direct.</p><p>Une fonction serverless Vercel sert de proxy à Last.fm pour que la clé d'API reste côté serveur.</p>
+    </section>
+
+    <aside class="tile pj-stack" style="--i:4">
+      <span class="label">Stack</span>
+      <ul class="pj-tags"><li>JavaScript</li><li>Alpine.js</li><li>Vercel</li><li>Supabase</li><li>GitHub Actions</li></ul>
+    </aside>
+
+    
+
+    <a class="tile back-tile pj-foot f3" style="--i:9" href="../work.html"><div><span class="label">Tous les projets</span><span class="big">Retour</span></div><span class="go" aria-hidden="true" style="--dx:-1;--dy:0"><i>←</i></span></a><a class="tile back-tile pj-foot f3" style="--i:10" href="https://spotistat-gamma.vercel.app" target="_blank" rel="noopener"><div><span class="label">Démo en ligne</span><span class="big">Voir le site</span></div><span class="go" aria-hidden="true" style="--dx:1;--dy:-1"><i>↗</i></span></a><a class="tile back-tile pj-foot f3" style="--i:10" href="https://github.com/zaderlyl/Spoti-Stat" target="_blank" rel="noopener"><div><span class="label">Code source</span><span class="big">Voir le dépôt</span></div><span class="go" aria-hidden="true" style="--dx:1;--dy:-1"><i>↗</i></span></a><a class="tile back-tile pj-foot f3" style="--i:11" href="piscine.html"><div><span class="label">Projet suivant</span><span class="big">Piscine</span></div><span class="go" aria-hidden="true" style="--dx:1;--dy:0"><i>→</i></span></a>
+
+  </main>
+
+</body>
+</html>

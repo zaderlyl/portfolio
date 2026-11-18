@@ -4,143 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Musée FABI — Lilian Cornet</title>
-  <meta name="description" content="Étude de cas : site dynamique du Musée FABI avec catalogue en base de données, espace client et visite 3D, SAÉ 2.03 du BUT MMI.">
+  <meta name="description" content="Site complet d&#x27;un musée d&#x27;art fictif, le Musée FABI, construit autour de deux chantiers principaux : une visite virtuelle en 3D et une base de données qui ">
+  <meta name="theme-color" content="#050505">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/bento.css">
+  <script defer src="../assets/js/bento.js"></script>
 </head>
 <body>
 
-  <header>
-    <a class="logo" href="../index.html">Lilian Cornet</a>
-    <nav>
-      <a href="../index.html">Index</a>
-      <a href="../work.html" aria-current="page">Work</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <canvas id="bg" class="bg" aria-hidden="true"></canvas>
 
-  <main>
-    <p class="kicker">Étude de cas — 02</p>
-    <h1>Musée FABI</h1>
+  <main class="bento pj">
 
-    <div class="case-layout">
-      <div class="case-text">
+    <div class="tile wk pj-hero" style="--i:0"><img src="../assets/images/musee-accueil.jpg" alt="Page d'accueil du Musée FABI, décor de peinture classique avec arche et nuages"><span class="label">02 / 12</span></div>
 
-        <dl class="meta-grid">
-          <div>
-            <dt>Contexte</dt>
-            <dd>SAÉ 2.03 — BUT MMI, 1re année</dd>
-          </div>
-          <div>
-            <dt>Année</dt>
-            <dd>2026</dd>
-          </div>
-          <div>
-            <dt>Rôle</dt>
-            <dd>Développement full-stack</dd>
-          </div>
-          <div>
-            <dt>Livrables</dt>
-            <dd>Site dynamique + API PHP + BDD</dd>
-          </div>
-        </dl>
-
-        <div class="prose">
-          <p>
-            Site complet d'un musée d'art fictif, le Musée FABI, construit
-            autour de deux chantiers principaux : une <strong>visite
-            virtuelle en 3D</strong> et une <strong>base de données</strong>
-            qui alimente tout le site.
-          </p>
-          <p>
-            La visite 3D, développée avec Three.js, reconstitue le musée
-            salle par salle : navigation libre au clavier (ZQSD/WASD),
-            sprint, et un système de collisions maison qui teste la
-            position du joueur contre les zones de navigation de chaque
-            salle et couloir. Une mini-carte affichée en temps réel
-            situe le visiteur dans le bâtiment, et des étiquettes
-            d'œuvres apparaissent par proximité — nom, auteur, courant
-            artistique — quand on s'approche d'une sculpture ou d'un
-            tableau. Les salles et leurs œuvres se chargent à la volée
-            selon la distance du joueur, pour garder l'expérience fluide.
-          </p>
-          <p>
-            Derrière l'interface, une base de données MySQL structure tout
-            le contenu : œuvres, catégories, salles, utilisateurs, notes et
-            commentaires. J'ai conçu le schéma, écrit les requêtes via PDO
-            avec des requêtes préparées, et exposé les données au front par
-            une API PHP (catalogue, favoris, notes, session utilisateur).
-            Le catalogue affiché sur le site et les œuvres accrochées dans
-            la visite 3D viennent de cette même source de données.
-          </p>
-          <p>
-            Autour de ce socle, le site propose aussi un espace client
-            complet (inscription, connexion, sessions PHP, favoris), la
-            réservation de billets par email via PHPMailer, une page de
-            don, une newsletter et une interface multilingue.
-          </p>
-          <p>
-            C'est mon premier projet full-stack complet : concevoir une
-            base de données, sécuriser une API, gérer l'authentification
-            et la 3D temps réel — tout en soignant une direction artistique
-            sombre et picturale, à l'image d'un musée.
-          </p>
-        </div>
-
-        <div class="pager">
-          <a href="halles-beziers.html">← Projet précédent</a>
-          <a href="gram.html">Projet suivant →</a>
-        </div>
-
+    <header class="tile pj-title" style="--i:1">
+      <span class="label">Projet 02</span>
+      <div>
+        <h1 class="pj-h1">Musée FABI</h1>
+        <p class="small">Site dynamique · PHP · MySQL</p>
       </div>
+    </header>
 
-      <aside class="shots" aria-label="Captures d'écran du site">
-        <figure class="shot" data-speed="0.03">
-          <img src="../assets/images/musee-accueil.jpg" alt="Page d'accueil du Musée FABI, décor de peinture classique avec arche et nuages">
-          <figcaption>Accueil</figcaption>
-        </figure>
-        <figure class="shot" data-speed="0.09">
-          <img src="../assets/images/musee-catalogue.jpg" alt="Page catalogue des œuvres du Musée FABI">
-          <figcaption>Catalogue des œuvres</figcaption>
-        </figure>
-        <figure class="shot" data-speed="0.15">
-          <img src="../assets/images/musee-don.jpg" alt="Page de don « Soutenez l'art vivant » avec statistiques">
-          <figcaption>Page de don</figcaption>
-        </figure>
-        <figure class="shot" data-speed="0.22">
-          <img src="../assets/images/musee-contact.jpg" alt="Page contact ornée de peintures d'anges">
-          <figcaption>Contact</figcaption>
-        </figure>
-      </aside>
-    </div>
+    <dl class="tile pj-meta" style="--i:2">
+      <div><dt class="label">Contexte</dt><dd>SAÉ 2.03 — BUT MMI, 1re année</dd></div><div><dt class="label">Année</dt><dd>2026</dd></div><div><dt class="label">Rôle</dt><dd>Développement full-stack</dd></div><div><dt class="label">Livrables</dt><dd>Site dynamique + API PHP + BDD</dd></div>
+    </dl>
+
+    <section class="tile pj-desc" style="--i:3">
+      <span class="label">Le projet</span>
+      <p>Site complet d'un musée d'art fictif, le Musée FABI, construit autour de deux chantiers principaux : une <strong>visite virtuelle en 3D</strong> et une <strong>base de données</strong> qui alimente tout le site.</p><p>La visite 3D, développée avec Three.js, reconstitue le musée salle par salle : navigation libre au clavier (ZQSD/WASD), sprint, et un système de collisions maison qui teste la position du joueur contre les zones de navigation de chaque salle et couloir. Une mini-carte affichée en temps réel situe le visiteur dans le bâtiment, et des étiquettes d'œuvres apparaissent par proximité — nom, auteur, courant artistique — quand on s'approche d'une sculpture ou d'un tableau. Les salles et leurs œuvres se chargent à la volée selon la distance du joueur, pour garder l'expérience fluide.</p><p>Derrière l'interface, une base de données MySQL structure tout le contenu : œuvres, catégories, salles, utilisateurs, notes et commentaires. J'ai conçu le schéma, écrit les requêtes via PDO avec des requêtes préparées, et exposé les données au front par une API PHP (catalogue, favoris, notes, session utilisateur). Le catalogue affiché sur le site et les œuvres accrochées dans la visite 3D viennent de cette même source de données.</p><p>Autour de ce socle, le site propose aussi un espace client complet (inscription, connexion, sessions PHP, favoris), la réservation de billets par email via PHPMailer, une page de don, une newsletter et une interface multilingue.</p><p>C'est mon premier projet full-stack complet : concevoir une base de données, sécuriser une API, gérer l'authentification et la 3D temps réel — tout en soignant une direction artistique sombre et picturale, à l'image d'un musée.</p>
+    </section>
+
+    <aside class="tile pj-stack" style="--i:4">
+      <span class="label">Stack</span>
+      <ul class="pj-tags"><li>PHP</li><li>MySQL</li><li>Three.js</li><li>JavaScript</li></ul>
+    </aside>
+
+    <figure class="tile pj-shot s4" style="--i:5"><img src="../assets/images/musee-catalogue.jpg" alt="Page catalogue des œuvres du Musée FABI" loading="lazy"><figcaption class="label">Catalogue des œuvres</figcaption></figure><figure class="tile pj-shot s4" style="--i:6"><img src="../assets/images/musee-don.jpg" alt="Page de don « Soutenez l'art vivant » avec statistiques" loading="lazy"><figcaption class="label">Page de don</figcaption></figure><figure class="tile pj-shot s4" style="--i:7"><img src="../assets/images/musee-contact.jpg" alt="Page contact ornée de peintures d'anges" loading="lazy"><figcaption class="label">Contact</figcaption></figure>
+
+    <a class="tile back-tile pj-foot f6" style="--i:9" href="../work.html"><div><span class="label">Tous les projets</span><span class="big">Retour</span></div><span class="go" aria-hidden="true" style="--dx:-1;--dy:0"><i>←</i></span></a><a class="tile back-tile pj-foot f6" style="--i:11" href="printemps-culture.html"><div><span class="label">Projet suivant</span><span class="big">Printemps de la Culture</span></div><span class="go" aria-hidden="true" style="--dx:1;--dy:0"><i>→</i></span></a>
+
   </main>
-
-  <footer>
-    <span>© 2026 Lilian Cornet</span>
-    <span>Étude de cas — 02</span>
-  </footer>
-
-  <div class="lightbox" id="lightbox" hidden>
-    <div class="lb-top">
-      <span class="lb-counter" id="lb-counter">01 / 04</span>
-      <button type="button" id="lb-close">[ Fermer ]</button>
-    </div>
-    <div class="lb-stage">
-      <div class="lb-frame">
-        <img id="lb-img" src="" alt="">
-      </div>
-      <p class="lb-caption" id="lb-caption"></p>
-    </div>
-    <div class="lb-bottom">
-      <button type="button" id="lb-prev">← Précédente</button>
-      <button type="button" id="lb-next">Suivante →</button>
-    </div>
-  </div>
-
-  <script src="../assets/js/case.js"></script>
 
 </body>
 </html>

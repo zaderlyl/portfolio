@@ -3,50 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lilian Cornet</title>
-  <meta name="description" content="Étudiant BUT MMI, développeur web et designer d'interfaces basé à Béziers.">
+  <title>Lilian Cornet — Développeur web &amp; designer d'interfaces</title>
+  <meta name="description" content="Étudiant BUT MMI à Béziers, développeur web et designer d'interfaces. À la recherche d'une alternance.">
+  <meta name="theme-color" content="#050505">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bento.css">
+  <script defer src="assets/js/bento.js"></script>
 </head>
 <body>
 
-  <header>
-    <a class="logo" href="index.html">Lilian Cornet</a>
-    <nav>
-      <a href="index.html" aria-current="page">Index</a>
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+  <canvas id="bg" class="bg" aria-hidden="true"></canvas>
+
+  <main class="bento">
+
+    <!-- 01 Profil : photo -->
+    <a class="tile t-about" style="--i:0" href="about.html">
+      <img class="photo" src="assets/images/lilian.jpg" alt="Portrait de Lilian Cornet tenant un clap de cinéma">
+      <span class="label">01 — Profil</span>
+      <div class="row">
+        <p class="big">Qui suis-je ?</p>
+        <span class="go" aria-hidden="true" style="--dx:1;--dy:-1"><i>↗</i></span>
+      </div>
+    </a>
+
+    <!-- 01 Profil : présentation -->
+    <section class="tile t-intro" style="--i:1">
+      <div>
+        <h1 class="wm" aria-label="Lilian Cornet">Lilian<br>Cornet</h1>
+        <p class="small">Développeur web et designer d'interfaces · BUT MMI, Béziers</p>
+      </div>
+    </section>
+
+    <!-- Liens -->
+    <nav class="tile t-links" style="--i:6" aria-label="Mes réseaux">
+      <span class="label">Liens</span>
+      <ul>
+        <li><a href="https://github.com/zaderlyl" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/liliancornet" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      </ul>
     </nav>
-  </header>
 
-  <main>
-    <p class="lede" style="margin-top: auto;">
-      Étudiant en BUT Métiers du Multimédia et de l'Internet à l'IUT de
-      Béziers, je conçois des sites web et des identités visuelles.
-      Actuellement à la recherche d'une <strong>alternance</strong> en
-      développement web ou en design d'interfaces.
-    </p>
+    <!-- 02 Projets -->
+    <section class="tile t-projects" style="--i:2" aria-label="Projets">
+      <div class="slides" aria-hidden="true">
+        <img src="assets/images/sae-accueil.jpg" alt="" data-title="Halles de Béziers" data-desc="Site vitrine et visite virtuelle 360°" data-href="work/halles-beziers.html">
+        <img src="assets/images/musee-accueil.jpg" alt="" data-title="Musée FABI" data-desc="Site dynamique PHP / MySQL" data-href="work/musee-fabi.html" loading="lazy">
+        <img src="assets/images/gram-gameplay.jpg" alt="" data-title="GRAM" data-desc="Jeu vidéo en Phaser 3" data-href="work/gram.html" loading="lazy">
+        <img src="assets/images/tp7-hub.jpg" alt="" data-title="PromoCards" data-desc="Plateforme PHP / SQLite" data-href="work/promocards.html" loading="lazy">
+        <img src="assets/images/printemps-cover.jpg" alt="" data-title="Printemps de la Culture" data-desc="Identité, affiche et brochure" data-href="work/printemps-culture.html" loading="lazy">
+        <img src="assets/images/dominos-facade.jpg" alt="" data-title="Domino's" data-desc="Identité et brand book" data-href="work/dominos.html" loading="lazy">
+      </div>
+      <a class="stretch" href="work.html" aria-label="Voir tous mes projets"></a>
+      <div class="over row top"><span class="label">02 — Projets</span><span class="label count"></span></div>
+      <div class="over bottom">
+        <h2></h2>
+        <p></p>
+        <div class="dots" role="group" aria-label="Choisir un projet"></div>
+      </div>
+    </section>
 
-    <ul class="rows">
-      <li>
-        <a href="work.html">Work <sup>01</sup><span class="meta">6 projets</span></a>
-      </li>
-      <li>
-        <a href="about.html">About <sup>02</sup><span class="meta">Parcours &amp; services</span></a>
-      </li>
-      <li>
-        <a href="contact.html">Contact <sup>03</sup><span class="meta">Disponible</span></a>
-      </li>
-    </ul>
+    <!-- 03 Compétences -->
+    <a class="tile t-skills" style="--i:3" href="competences.html" aria-label="Voir toutes mes compétences">
+      <div class="row top"><span class="label">03 — Compétences</span><span class="go" aria-hidden="true" style="--dx:1;--dy:-1"><i>↗</i></span></div>
+      <p class="stat">38<span> / compétences</span></p>
+      <ul class="tools">
+        <li><img src="assets/icons/html5.svg" alt=""><span class="name">HTML5</span></li>
+        <li><img src="assets/icons/css3.svg" alt=""><span class="name">CSS3</span></li>
+        <li><img src="assets/icons/javascript.svg" alt=""><span class="name">JavaScript</span></li>
+        <li><img src="assets/icons/typescript.svg" alt=""><span class="name">TypeScript</span></li>
+        <li><img src="assets/icons/php.svg" alt=""><span class="name">PHP</span></li>
+        <li><img src="assets/icons/mysql.svg" alt=""><span class="name">SQL</span></li>
+        <li><img src="assets/icons/git.svg" alt=""><span class="name">Git</span></li>
+        <li><img src="assets/icons/adobe.svg" alt=""><span class="name">Adobe</span></li>
+      </ul>
+    </a>
+
+    <!-- Parcours -->
+    <a class="tile t-formation" style="--i:7" href="parcours.html">
+      <div class="row top"><span class="label">05 — Parcours</span><span class="go" aria-hidden="true" style="--dx:1;--dy:-1"><i>↗</i></span></div>
+      <div>
+        <p class="big">Mon parcours</p>
+        <p class="small" style="margin-top:6px">Études, expériences et engagements.</p>
+      </div>
+    </a>
+
+    <!-- 04 Contact -->
+    <a class="tile t-contact" style="--i:4" href="mailto:lcornet38@gmail.com" aria-label="Me contacter : lcornet38@gmail.com">
+      <span class="label">04 — Contact</span>
+      <p class="big">lcornet38@gmail.com</p>
+      <span class="go" aria-hidden="true" style="--dx:1;--dy:-1"><i>↗</i></span>
+    </a>
+
+    <!-- CV -->
+    <a class="tile t-cv" style="--i:5" href="assets/cv-lilian-cornet.pdf" download>
+      <span class="label">CV</span>
+      <p class="big">Télécharger mon CV</p>
+      <span class="go" aria-hidden="true" style="--dx:0;--dy:1"><i>↓</i></span>
+    </a>
+
   </main>
-
-  <footer>
-    <span>© 2026 Lilian Cornet</span>
-    <span>Index — 01 / 04</span>
-  </footer>
 
 </body>
 </html>
