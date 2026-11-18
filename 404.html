@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Lilian Cornet</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#050505">
+  <script>
+    /* Cette page est servie à n'importe quelle adresse manquante : on recalcule la racine du site. */
+    document.write('<base href="' + (location.hostname.endsWith('github.io') ? '/' + location.pathname.split('/')[1] + '/' : '/') + '">');
+  </script>
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bento.css">
+  <script defer src="assets/js/bento.js"></script>
+</head>
+<body>
+
+  <canvas id="bg" class="bg" aria-hidden="true"></canvas>
+
+  <main class="sp">
+    <div class="sp-grid">
+
+      <section class="tile block" style="--i:0; grid-column: 1 / -1; min-height: 52svh; justify-content: space-between;">
+        <span class="label">Erreur 404</span>
+        <div>
+          <h1 class="wm">Page<br>introuvable</h1>
+          <p class="small" style="margin-top:14px">Le lien est cassé ou la page n'existe plus.</p>
+        </div>
+      </section>
+
+      <a class="tile back-tile" style="--i:1; grid-column: 1 / -1; grid-row: auto;" href="./">
+        <span class="big">Retour à l'accueil</span>
+        <span class="go" aria-hidden="true" style="--dx:-1;--dy:0"><i>←</i></span>
+      </a>
+
+    </div>
+  </main>
+
+</body>
+</html>
